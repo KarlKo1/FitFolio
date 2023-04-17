@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { Box, ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider, CssBaseline } from "@mui/material";
 import { useMemo } from "react";
 import { themeSettings } from "./theme";
 import { useSelector } from "react-redux";
@@ -19,14 +19,15 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
+        <CssBaseline />
+        <Box width="80%" m="0 auto">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/exercise/:id" element={<ExerciseDetail />} />
           </Routes>
-          <Footer />
         </Box>
+        <Footer />
       </ThemeProvider>
     </BrowserRouter>
   );
