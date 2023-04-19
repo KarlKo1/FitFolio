@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Stack, Typography, Button, useTheme } from "@mui/material";
 
-import HeroBannerImg from "../assets/images/banner.png";
+import HeroBannerImg from "../assets/images/banner2.png";
 const HeroBanner = () => {
   const theme = useTheme();
   return (
@@ -44,10 +44,10 @@ const HeroBanner = () => {
       <Typography
         fontWeight="600"
         fontSize="200px"
+        className="hero-text"
         sx={{
           opacity: 0.2,
           color: theme.palette.secondary[600],
-          display: { lg: "block", sx: "none" },
         }}
       >
         Exercise

@@ -50,8 +50,8 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
         borderTop: bodyPart === item ? "4px solid #ff2625" : "",
         borderRadius: "16px",
         backgroundColor: theme.palette.grey[50],
-        width: "270px",
-        height: "280px",
+        width: { lg: "280px", xs: "150px" },
+        height: { lg: "280px", xs: "150px" },
         cursor: "pointer",
         gap: "47px",
       }}

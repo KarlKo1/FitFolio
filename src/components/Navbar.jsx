@@ -4,6 +4,7 @@ import { Stack, IconButton, useTheme } from "@mui/material";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import Logo from "../assets/images/Logo.png";
+import LogoDark from "../assets/images/Logo-dark.png";
 import { setMode } from "../state";
 
 const Navbar = () => {
@@ -22,18 +23,43 @@ const Navbar = () => {
           sm: "32px",
           xs: "20px",
         },
+        px: {
+          lg: "20px",
+          xs: "0",
+        },
         justifyContent: "none",
       }}
-      px="20px"
     >
-      <Link to="/">
-        <img
-          src={Logo}
-          alt="logo"
-          style={{ width: "48px", height: "48px", margin: "0 20px" }}
-        />
-      </Link>
-      <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
+      <Stack
+        direction="row"
+        fontSize="24px"
+        alignItems="flex-end"
+        sx={{ gap: { lg: "40px", xs: "20px" } }}
+      >
+        <Link to="/" style={{ display: "inherit" }}>
+          {theme.palette.mode === "dark" ? (
+            <img
+              className="logo"
+              src={LogoDark}
+              alt="logo"
+              style={{
+                width: "48px",
+                height: "48px",
+              }}
+            />
+          ) : (
+            <img
+              className="logo"
+              src={Logo}
+              alt="logo"
+              style={{
+                width: "48px",
+                height: "48px",
+                margin: "0 20px",
+              }}
+            />
+          )}
+        </Link>
         <Link
           to="/"
           style={{
@@ -54,18 +80,18 @@ const Navbar = () => {
         >
           Exercises
         </a>
+        <IconButton onClick={() => dispatch(setMode())}>
+          {theme.palette.mode === "dark" ? (
+            <DarkModeOutlined
+              sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
+            />
+          ) : (
+            <LightModeOutlined
+              sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
+            />
+          )}
+        </IconButton>
       </Stack>
-      <IconButton onClick={() => dispatch(setMode())}>
-        {theme.palette.mode === "dark" ? (
-          <DarkModeOutlined
-            sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
-          />
-        ) : (
-          <LightModeOutlined
-            sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
-          />
-        )}
-      </IconButton>
     </Stack>
   );
 };
