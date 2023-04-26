@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Stack, IconButton, useTheme } from "@mui/material";
+import { Stack, IconButton, useTheme, Typography } from "@mui/material";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
-import Logo from "../assets/images/Logo.png";
-import LogoDark from "../assets/images/Logo-dark.png";
 import { setMode } from "../state";
 
 const Navbar = () => {
@@ -13,13 +11,16 @@ const Navbar = () => {
   return (
     <Stack
       direction="row"
-      justifyContent="space-around"
+      justifyContent="space-evenly"
+      zIndex="9999"
+      position="absolute"
+      width="100%"
       sx={{
         gap: {
           sm: "122px",
           xs: "40px",
         },
-        mt: {
+        pt: {
           sm: "32px",
           xs: "20px",
         },
@@ -27,46 +28,26 @@ const Navbar = () => {
           lg: "20px",
           xs: "0",
         },
-        justifyContent: "none",
       }}
     >
+      <Link to="/" style={{ display: "inherit" }}>
+        <Typography id="logo" sx={{ color: theme.palette.secondary[900] }}>
+          FITFOLIO
+        </Typography>
+      </Link>
       <Stack
         direction="row"
         fontSize="24px"
         alignItems="flex-end"
         sx={{ gap: { lg: "40px", xs: "20px" } }}
       >
-        <Link to="/" style={{ display: "inherit" }}>
-          {theme.palette.mode === "dark" ? (
-            <img
-              className="logo"
-              src={LogoDark}
-              alt="logo"
-              style={{
-                width: "48px",
-                height: "48px",
-              }}
-            />
-          ) : (
-            <img
-              className="logo"
-              src={Logo}
-              alt="logo"
-              style={{
-                width: "48px",
-                height: "48px",
-                margin: "0 20px",
-              }}
-            />
-          )}
-        </Link>
         <Link
           to="/"
           style={{
             textDecoration: "none",
-            color: theme.palette.secondary[600],
+            color: theme.palette.secondary[900],
             borderBottom: "3px solid",
-            borderColor: theme.palette.secondary[600],
+            borderColor: theme.palette.secondary[900],
           }}
         >
           Home
@@ -75,23 +56,23 @@ const Navbar = () => {
           href="#exercises"
           style={{
             textDecoration: "none",
-            color: theme.palette.secondary[600],
+            color: theme.palette.secondary[900],
           }}
         >
           Exercises
         </a>
-        <IconButton onClick={() => dispatch(setMode())}>
-          {theme.palette.mode === "dark" ? (
-            <DarkModeOutlined
-              sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
-            />
-          ) : (
-            <LightModeOutlined
-              sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
-            />
-          )}
-        </IconButton>
       </Stack>
+      <IconButton onClick={() => dispatch(setMode())}>
+        {theme.palette.mode === "dark" ? (
+          <DarkModeOutlined
+            sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
+          />
+        ) : (
+          <LightModeOutlined
+            sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
+          />
+        )}
+      </IconButton>
     </Stack>
   );
 };

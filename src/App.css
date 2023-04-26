@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+
+@font-face {
+  font-family: "edosz";
+  src: local("Edo SZ"), url("../assets/fonts/edosz.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Neuropolitical";
+  src: url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.eot");
+  src: url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.svg#Neuropolitical")
+      format("svg");
+}
 
 * {
   margin: 0;
@@ -15,6 +36,16 @@ body {
 }
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#logo {
+  font-family: "Neuropolitical";
+  font-size: 1.75rem;
 }
 
 .right-arrow,
@@ -45,18 +76,31 @@ body {
 }
 
 .hero-banner-img {
-  position: absolute;
-  right: 1%;
-  width: 50%;
+  width: 150%;
   height: auto;
-  top: 0px;
-  margin-top: -330px;
-  border-radius: 0 0 100px 100px;
+  pointer-events: none;
+}
+.hero-banner-text {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-family: "edosz";
+  font-size: 8rem;
+  text-align: center;
+  top: -5%;
+  right: 30%;
+  opacity: 0.95;
+  line-height: 1.15;
+}
+
+.hero-banner-text span {
+  font-size: 5rem;
+  position: absolute;
+  right: -10%;
 }
 
 .exercise-card {
-  width: 400px;
-  height: 425px;
+  width: 40%;
   background: #fff;
   border-radius: 16px;
   text-decoration: none;
@@ -72,6 +116,7 @@ body {
 .exercise-card img {
   height: 326px;
   object-fit: contain;
+  border-radius: 10%;
 }
 
 .bodyPart-card {
@@ -95,11 +140,64 @@ body {
   text-decoration: none;
 }
 
+.circle {
+  position: absolute;
+  left: 0;
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.bg-circle {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  filter: blur(0.15rem);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.bg-circle-1 {
+  bottom: 10%;
+  left: 20%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 111, 89, 1) 100%
+  );
+  opacity: 0.5;
+}
+.bg-circle-2 {
+  bottom: 20%;
+  right: 20%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 111, 89, 1) 100%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+.bg-circle-3 {
+  height: 25px;
+  width: 25px;
+  top: 15%;
+  right: 25%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 111, 89, 1) 100%
+  );
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 1450px) {
   .hero-banner-img {
     top: 10%;
     right: -10%;
-    border-radius: 100px;
   }
 }
 
@@ -108,7 +206,11 @@ body {
     width: 300px;
     height: 300px;
   }
-
+  @media screen and (max-width: 950px) {
+    .exercise-card img {
+      height: 130px;
+    }
+  }
   .left-arrow,
   .right-arrow {
     position: static !important;
@@ -120,9 +222,6 @@ body {
   .hero-text {
     display: none;
   }
-  .exercise-card {
-    width: 320px;
-  }
 
   .exercise-video {
     width: 320px;
@@ -130,12 +229,6 @@ body {
   }
 }
 
-@media screen and (max-width: 400px) {
-  .exercise-card {
-    width: 40px;
-    height: 40px;
-  }
-}
 @media screen and (max-width: 340px) {
   .logo {
     width: 15px;

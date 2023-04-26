@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Stack, Typography, Button, useTheme } from "@mui/material";
 
-import HeroBannerImg from "../assets/images/banner2.png";
 const HeroBanner = () => {
   const theme = useTheme();
   return (
@@ -14,7 +13,7 @@ const HeroBanner = () => {
       p="2px"
     >
       <Typography
-        sx={{ color: theme.palette.secondary[600] }}
+        sx={{ color: theme.palette.secondary[900] }}
         fontWeight="600"
         fontSize="26px"
       >
@@ -22,20 +21,28 @@ const HeroBanner = () => {
       </Typography>
       <Typography
         fontWeight="700"
-        sx={{ fontSize: { lg: "44px", xs: "38px" } }}
+        sx={{
+          fontSize: { lg: "44px", xs: "38px" },
+          color: theme.palette.secondary[900],
+        }}
         mb="23px"
         mt="30px"
       >
         Your Comprehensive <br /> Fitness Handbook
       </Typography>
-      <Typography fontSize="22px" lineHeight="35px" mb={2}>
+      <Typography
+        fontSize="22px"
+        lineHeight="35px"
+        mb={2}
+        sx={{ color: theme.palette.secondary[900] }}
+      >
         Check out the most effective exerices
       </Typography>
       <Button
         variant="contained"
         sx={{
-          backgroundColor: theme.palette.secondary[600],
-          color: theme.palette.secondary[900],
+          backgroundColor: theme.palette.secondary[900],
+          color: theme.palette.secondary[50],
         }}
         href="#exercises"
       >
@@ -46,13 +53,12 @@ const HeroBanner = () => {
         fontSize="200px"
         className="hero-text"
         sx={{
-          opacity: 0.2,
-          color: theme.palette.secondary[600],
+          opacity: 0.1,
+          color: theme.palette.secondary[900],
         }}
       >
         Exercise
       </Typography>
-      <img src={HeroBannerImg} alt="banner" className="hero-banner-img" />
     </Box>
   );
 };

@@ -17,7 +17,7 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
 
   const paginate = (e, value) => {
     setCurrentPage(value);
-    window.scrollTo({ top: 1900, behavior: "smooth" });
+    // window.scrollTo({ top: 1900, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -38,9 +38,14 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
       }
     };
     fetchExercisesData();
-  }, []);
+  }, [bodyPart]);
   return (
-    <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
+    <Box
+      id="exercises"
+      sx={{ mt: { lg: "110px" }, display: "flex", flexDirection: "column" }}
+      mt="50px"
+      p="20px"
+    >
       <Typography variant="h4" ml="30px">
         Showing Results
       </Typography>

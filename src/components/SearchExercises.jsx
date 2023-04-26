@@ -39,6 +39,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           exercise.equipment.toLowerCase().includes(search) ||
           exercise.bodyPart.toLowerCase().includes(search)
       );
+      window.scrollTo({ top: 1750, left: 100, behavior: "smooth" });
       setSearch("");
       setExercises(searchedExercises);
     }

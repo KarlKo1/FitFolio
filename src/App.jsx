@@ -8,7 +8,6 @@ import { createTheme } from "@mui/material/styles";
 import { BrowserRouter } from "react-router-dom";
 
 // Components & Pages
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import ExerciseDetail from "./pages/ExerciseDetail";
 import Footer from "./components/Footer";
@@ -20,8 +19,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box width="80%" m="0 auto">
-          <Navbar />
+        <Box>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/exercise/:id" element={<ExerciseDetail />} />
