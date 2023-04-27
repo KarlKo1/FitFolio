@@ -34,6 +34,7 @@ body {
   font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -45,7 +46,7 @@ a {
 
 #logo {
   font-family: "Neuropolitical";
-  font-size: 1.75rem;
+  font-size: clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem);
 }
 
 .right-arrow,
@@ -80,6 +81,7 @@ a {
   height: auto;
   pointer-events: none;
 }
+
 .hero-banner-text {
   z-index: 100;
   position: absolute;
@@ -170,6 +172,7 @@ a {
   );
   opacity: 0.5;
 }
+
 .bg-circle-2 {
   bottom: 20%;
   right: 20%;
@@ -180,6 +183,7 @@ a {
     rgba(255, 255, 255, 1) 100%
   );
 }
+
 .bg-circle-3 {
   height: 25px;
   width: 25px;
@@ -206,11 +210,13 @@ a {
     width: 300px;
     height: 300px;
   }
+
   @media screen and (max-width: 950px) {
     .exercise-card img {
       height: 130px;
     }
   }
+
   .left-arrow,
   .right-arrow {
     position: static !important;
@@ -219,6 +225,7 @@ a {
   .hero-banner-img {
     display: none;
   }
+
   .hero-text {
     display: none;
   }

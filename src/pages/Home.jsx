@@ -22,7 +22,9 @@ const Home = () => {
           position="relative"
         >
           <Box
-            sx={{ backgroundColor: theme.palette.secondary[500] }}
+            sx={{
+              backgroundColor: theme.palette.secondary[500],
+            }}
             borderRadius="50%"
             height="250px"
             width="250px"
@@ -38,11 +40,11 @@ const Home = () => {
             </p>
           </Box>
           <HeroBanner />
-          <span class="bg-circle bg-circle-1"></span>
-          <span class="bg-circle bg-circle-3"></span>
+          <span className="bg-circle bg-circle-1"></span>
+          <span className="bg-circle bg-circle-3"></span>
         </Box>
         <Box bgcolor="white" sx={{ flexGrow: 2 }}>
-          <span class="bg-circle bg-circle-2"></span>
+          <span className="bg-circle bg-circle-2"></span>
         </Box>
       </Box>
       <SearchExercises

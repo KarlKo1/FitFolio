@@ -30,7 +30,6 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
       <Stack
         direction="row"
         sx={{
-          p: "2",
           position: "relative",
           width: { lg: "100%", xs: "125%" },
           p: "20px",

@@ -28,6 +28,13 @@ const Navbar = () => {
           lg: "20px",
           xs: "0",
         },
+        display: {
+          xs: "block",
+          lg: "flex",
+        },
+        p: {
+          xs: "2rem",
+        },
       }}
     >
       <Link to="/" style={{ display: "inherit" }}>
@@ -37,7 +44,7 @@ const Navbar = () => {
       </Link>
       <Stack
         direction="row"
-        fontSize="24px"
+        fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
         alignItems="flex-end"
         sx={{ gap: { lg: "40px", xs: "20px" } }}
       >
