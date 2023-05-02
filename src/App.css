@@ -9,16 +9,6 @@
 @font-face {
   font-family: "Neuropolitical";
   src: url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.eot");
-  src: url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.eot?#iefix")
-      format("embedded-opentype"),
-    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.woff2")
-      format("woff2"),
-    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.woff")
-      format("woff"),
-    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.svg#Neuropolitical")
-      format("svg");
 }
 
 * {
@@ -85,7 +75,6 @@ a {
 .hero-banner-text {
   z-index: 100;
   position: absolute;
-  color: white;
   font-family: "edosz";
   font-size: 8rem;
   text-align: center;
@@ -164,24 +153,12 @@ a {
 .bg-circle-1 {
   bottom: 10%;
   left: 20%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 111, 89, 1) 100%
-  );
   opacity: 0.5;
 }
 
 .bg-circle-2 {
   bottom: 20%;
   right: 20%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 111, 89, 1) 100%,
-    rgba(255, 255, 255, 1) 100%
-  );
 }
 
 .bg-circle-3 {
@@ -189,12 +166,6 @@ a {
   width: 25px;
   top: 15%;
   right: 25%;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 111, 89, 1) 100%
-  );
   opacity: 0.5;
 }
 

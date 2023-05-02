@@ -50,7 +50,7 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
       <Typography
         variant="h4"
         ml="30px"
-        sx={{ color: theme.palette.grey[700] }}
+        sx={{ color: theme.palette.secondary[500] }}
       >
         Showing Results
       </Typography>

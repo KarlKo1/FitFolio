@@ -51,7 +51,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         fontWeight="700"
         sx={{
           fontSize: { lg: "44px", xs: "30px" },
-          color: theme.palette.grey[700],
+          color: theme.palette.secondary[500],
         }}
         mb="50px"
         textAlign="center"

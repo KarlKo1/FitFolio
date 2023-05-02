@@ -6,14 +6,13 @@ const HeroBanner = () => {
   return (
     <Box
       sx={{
-        mt: { lg: "212px", xs: "170px" },
-        ml: { sm: "50px" },
+        mt: { lg: "15rem", xs: "1.5rem" },
+        ml: { lg: "12rem", sm: "5rem" },
       }}
       position="relative"
-      p="2px"
     >
       <Typography
-        sx={{ color: theme.palette.secondary[900] }}
+        sx={{ color: theme.palette.primary[100] }}
         fontWeight="600"
         fontSize="26px"
       >
@@ -23,7 +22,7 @@ const HeroBanner = () => {
         fontWeight="700"
         sx={{
           fontSize: { lg: "44px", xs: "24px" },
-          color: theme.palette.secondary[900],
+          color: theme.palette.primary[100],
         }}
         mb="23px"
         mt="30px"
@@ -34,7 +33,7 @@ const HeroBanner = () => {
         fontSize="22px"
         lineHeight="35px"
         mb={2}
-        sx={{ color: theme.palette.secondary[900] }}
+        sx={{ color: theme.palette.primary[100] }}
       >
         Check out the most effective exerices
       </Typography>
@@ -42,7 +41,7 @@ const HeroBanner = () => {
         variant="contained"
         sx={{
           backgroundColor: theme.palette.secondary[900],
-          color: theme.palette.secondary[50],
+          color: theme.palette.secondary[500],
         }}
         href="#exercises"
       >

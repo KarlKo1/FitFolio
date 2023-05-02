@@ -12,6 +12,7 @@ const Navbar = () => {
     <Stack
       direction="row"
       justifyContent="space-evenly"
+      alignItems="center"
       zIndex="9999"
       position="absolute"
       width="100%"
@@ -38,23 +39,23 @@ const Navbar = () => {
       }}
     >
       <Link to="/" style={{ display: "inherit" }}>
-        <Typography id="logo" sx={{ color: theme.palette.secondary[900] }}>
+        <Typography id="logo" sx={{ color: theme.palette.primary[100] }}>
           FITFOLIO
         </Typography>
       </Link>
       <Stack
         direction="row"
         fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
-        alignItems="flex-end"
+        alignItems="center"
         sx={{ gap: { lg: "40px", xs: "20px" } }}
       >
         <Link
           to="/"
           style={{
             textDecoration: "none",
-            color: theme.palette.secondary[900],
+            color: theme.palette.primary[100],
             borderBottom: "3px solid",
-            borderColor: theme.palette.secondary[900],
+            borderColor: theme.palette.primary[100],
           }}
         >
           Home
@@ -63,20 +64,34 @@ const Navbar = () => {
           href="#exercises"
           style={{
             textDecoration: "none",
-            color: theme.palette.secondary[900],
+            color: theme.palette.primary[100],
           }}
         >
           Exercises
+        </a>
+        <a
+          href="#bmi"
+          style={{
+            textDecoration: "none",
+            color: theme.palette.secondary[500],
+            border: "3px solid",
+            borderColor: theme.palette.secondary[500],
+            borderRadius: "5px",
+            marginLeft: "25rem",
+            padding: "0.25rem 1rem 0.25rem 1rem",
+          }}
+        >
+          BMI
         </a>
       </Stack>
       <IconButton onClick={() => dispatch(setMode())}>
         {theme.palette.mode === "dark" ? (
           <DarkModeOutlined
-            sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
+            sx={{ fontSize: "25px", color: theme.palette.secondary[500] }}
           />
         ) : (
           <LightModeOutlined
-            sx={{ fontSize: "25px", color: theme.palette.secondary[600] }}
+            sx={{ fontSize: "25px", color: theme.palette.secondary[500] }}
           />
         )}
       </IconButton>

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 import Navbar from "../components/Navbar";
 import HeroBanner from "../components/HeroBanner";
 import SearchExercises from "../components/SearchExercises";
 import Exercises from "../components/Exercises";
 import HeroBannerImg from "../assets/images/hero-img.png";
+import Calculator from "../components/Calculator";
 
 const Home = () => {
   const [exercises, setExercises] = useState([]);
@@ -17,8 +18,7 @@ const Home = () => {
       <Box display="flex" height="100vh">
         <Navbar />
         <Box
-          bgcolor="red"
-          sx={{ backgroundColor: theme.palette.secondary[500], flexGrow: 1 }}
+          sx={{ backgroundColor: theme.palette.secondary[500], flex: "2 1 0" }}
           position="relative"
         >
           <Box
@@ -34,7 +34,10 @@ const Home = () => {
             justifyContent="center"
           >
             <img src={HeroBannerImg} alt="banner" className="hero-banner-img" />
-            <p className="hero-banner-text">
+            <p
+              className="hero-banner-text"
+              style={{ color: theme.palette.primary[100] }}
+            >
               Work <br />
               <span>It Up</span>
             </p>
@@ -43,10 +46,18 @@ const Home = () => {
           <span className="bg-circle bg-circle-1"></span>
           <span className="bg-circle bg-circle-3"></span>
         </Box>
-        <Box bgcolor="white" sx={{ flexGrow: 2 }}>
-          <span className="bg-circle bg-circle-2"></span>
+        <Box
+          sx={{ backgroundColor: theme.palette.primary[100], flex: "1 1 0" }}
+        >
+          <span
+            className="bg-circle bg-circle-2"
+            sx={{
+              backgroundColor: theme.palette.primary[900],
+            }}
+          ></span>
         </Box>
       </Box>
+      <Calculator />
       <SearchExercises
         setExercises={setExercises}
         bodyPart={bodyPart}
