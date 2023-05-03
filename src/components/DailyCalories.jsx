@@ -12,20 +12,18 @@ import {
 } from "@mui/material";
 import { fitnessOptions, fetchData } from "../utils/fetchData";
 
-const DailyColories = () => {
+const DailyColories = ({ fitnessCalculatorUrl }) => {
   const theme = useTheme();
-  const [genderValue, setGenderValue] = useState("");
+  const [genderValue, setGenderValue] = useState("female");
+  const [levelValue, setLevelValue] = useState("level_1");
+  const [dailyCalories, setDailyCalories] = useState("");
   const [data, setData] = useState({
     age: "",
     gender: genderValue,
     weight: "",
     height: "",
-    level: "",
+    level: levelValue,
   });
-
-  console.log(genderValue);
-  console.log(data);
-  const [dailyCalories, setDailyCalories] = useState(null);
 
   const handleData = (e) => {
     const newData = { ...data };
@@ -35,19 +33,24 @@ const DailyColories = () => {
 
   const handleGenderChange = (e) => {
     setGenderValue(e.target.value);
+    setData({ ...data, gender: e.target.value });
+  };
+
+  const handleLevelChange = (e) => {
+    setLevelValue(e.target.value);
+    setData({ ...data, level: e.target.value });
   };
 
   const handleCalculate = async (e) => {
     e.preventDefault();
     if (data.age && data.gender && data.weight && data.height && data.level) {
       const caloriesData = await fetchData(
-        `https://fitness-calculator.p.rapidapi.com/dailycalorie/bodyfat?age=${data.age}&gender=${data.gender}&weight=${data.weight}&height=${data.height}&activitylevel=${data.level}`,
+        `${fitnessCalculatorUrl}/dailycalorie?age=${data.age}&gender=${data.gender}&weight=${data.weight}&height=${data.height}&activitylevel=${data.level}`,
         fitnessOptions
       );
       setDailyCalories(caloriesData.data);
     }
   };
-
   return (
     <Box height="50vh">
       <form style={{ display: "flex" }} onSubmit={(e) => handleCalculate(e)}>
@@ -116,69 +119,54 @@ const DailyColories = () => {
               value={data.height}
               onChange={(e) => handleData(e)}
             />
-            {/* <RadioGroup
+            <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="level_1"
               name="level"
+              onChange={handleLevelChange}
             >
               <FormControlLabel
                 control={<Radio />}
                 label="Level 1 - Sedentary: little or no exercise"
-                id="level_1"
-                value={data.level}
-                checked={data.level === "level_1"}
-                onChange={(e) => handleData(e)}
+                value="level_1"
               />
               <FormControlLabel
                 control={<Radio />}
                 label="Level 2 - Exercise 1-3 times/week"
-                id="level_2"
-                value={data.level}
-                checked={data.level === "level_2"}
-                onChange={(e) => handleData(e)}
+                value="level_2"
               />
               <FormControlLabel
                 control={<Radio />}
                 label="Level 3 - Exercise 4-5 times/week"
-                id="level_3"
-                value={data.level}
-                checked={data.level === "level_3"}
-                onChange={(e) => handleData(e)}
+                value="level_3"
               />
               <FormControlLabel
                 control={<Radio />}
                 label="Level 4 - Daily exercise or intense exercise 3-4 times/week"
-                id="level_4"
-                value={data.level}
-                checked={data.level === "level_4"}
-                onChange={(e) => handleData(e)}
+                value="level_4"
               />
               <FormControlLabel
                 control={<Radio />}
                 label="Level 5 - Intense exercise 6-7 times/week"
-                id="level_5"
-                value={data.level}
-                checked={data.level === "level_5"}
-                onChange={(e) => handleData(e)}
+                value="level_5"
               />
               <FormControlLabel
                 control={<Radio />}
                 label="Level 6 - Very intense exercise daily, or physical job"
-                id="level_6"
-                value={data.level}
-                checked={data.level === "level_6"}
-                onChange={(e) => handleData(e)}
+                value="level_6"
               />
-            </RadioGroup> */}
+            </RadioGroup>
             <Button type="submit" variant="text">
               Calculate
             </Button>
-            {/* {dailyCalories && (
+            {dailyCalories && (
               <>
-                <Typography>{bmi.health}</Typography>
-                <Typography>Your BMI is {bmi.bmi.toFixed(2)}</Typography>
+                <Typography>
+                  Your daily calory requirement to maintain weight is{" "}
+                  {dailyCalories.goals["maintain weight"].toFixed()} calories.
+                </Typography>
               </>
-            )} */}
+            )}
           </Stack>
         </Box>
       </form>

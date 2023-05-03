@@ -6,18 +6,17 @@ import {
   Button,
   Typography,
   useTheme,
-  FormControl,
 } from "@mui/material";
 import { fitnessOptions, fetchData } from "../utils/fetchData";
 
-const BMI = () => {
+const BMI = ({ fitnessCalculatorUrl }) => {
   const theme = useTheme();
+  const [bmi, setBMI] = useState("");
   const [data, setData] = useState({
     age: "",
     weight: "",
     height: "",
   });
-  const [bmi, setBMI] = useState(null);
 
   const handleData = (e) => {
     const newData = { ...data };
@@ -29,7 +28,7 @@ const BMI = () => {
     e.preventDefault();
     if (data.age && data.weight && data.height) {
       const bmiData = await fetchData(
-        `https://fitness-calculator.p.rapidapi.com/bmi?age=${data.age}&weight=${data.weight}&height=${data.height}`,
+        `${fitnessCalculatorUrl}/bmi?age=${data.age}&weight=${data.weight}&height=${data.height}`,
         fitnessOptions
       );
       setBMI(bmiData.data);

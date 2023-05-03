@@ -7,6 +7,8 @@ import DailyCalories from "./DailyCalories";
 const Calculator = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const theme = useTheme();
+  const fitnessCalculatorUrl = "https://fitness-calculator.p.rapidapi.com";
+
   return (
     <>
       <Tabs
@@ -18,9 +20,13 @@ const Calculator = () => {
         <Tab label="Ideal Weight" />
         <Tab label="Daily Calories" />
       </Tabs>
-      {selectedTab === 0 && <BMI />}
-      {selectedTab === 1 && <IdealWeight />}
-      {selectedTab === 2 && <DailyCalories />}
+      {selectedTab === 0 && <BMI fitnessCalculatorUrl={fitnessCalculatorUrl} />}
+      {selectedTab === 1 && (
+        <IdealWeight fitnessCalculatorUrl={fitnessCalculatorUrl} />
+      )}
+      {selectedTab === 2 && (
+        <DailyCalories fitnessCalculatorUrl={fitnessCalculatorUrl} />
+      )}
     </>
   );
 };
