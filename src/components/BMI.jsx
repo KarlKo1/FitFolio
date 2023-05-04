@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Stack,
-  TextField,
-  Button,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Stack, Button, Typography, useTheme } from "@mui/material";
 import { fitnessOptions, fetchData } from "../utils/fetchData";
 
-const BMI = ({ fitnessCalculatorUrl }) => {
+const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
   const theme = useTheme();
   const [bmi, setBMI] = useState("");
   const [data, setData] = useState({
@@ -37,16 +30,26 @@ const BMI = ({ fitnessCalculatorUrl }) => {
 
   return (
     <Box height="50vh">
-      <form style={{ display: "flex" }} onSubmit={(e) => handleCalculate(e)}>
+      <form
+        style={{ display: "flex", height: "100%" }}
+        onSubmit={(e) => handleCalculate(e)}
+      >
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
           }}
           pl="5rem"
+          pt="2rem"
         >
-          <Typography variant="h2">BMI</Typography>
-          <Typography>
+          <Typography
+            variant="h2"
+            color={theme.palette.secondary[500]}
+            p="0.5rem 0 0.5rem 0"
+          >
+            BMI
+          </Typography>
+          <Typography width="75%">
             BMI stands for Body Mass Index, but you can call it your Body Math
             Indicator! It's a way to figure out if your weight is healthy for
             your height. All you need to do is plug in your weight and height
@@ -69,27 +72,34 @@ const BMI = ({ fitnessCalculatorUrl }) => {
             p="20px"
             rowGap="0.5rem"
           >
-            <Typography>Calculator</Typography>
-            <TextField
+            <Typography
+              fontSize="2rem"
+              sx={{
+                color: theme.palette.primary[100],
+              }}
+            >
+              Calculator
+            </Typography>
+            <StyledTextField
               id="age"
               label="Age"
-              variant="outlined"
+              variant="filled"
               type="number"
               value={data.age}
               onChange={(e) => handleData(e)}
             />
-            <TextField
+            <StyledTextField
               id="weight"
               label="Weight kg"
-              variant="outlined"
+              variant="filled"
               type="number"
               value={data.weight}
               onChange={(e) => handleData(e)}
             />
-            <TextField
+            <StyledTextField
               id="height"
               label="Height cm"
-              variant="outlined"
+              variant="filled"
               type="number"
               value={data.height}
               onChange={(e) => handleData(e)}

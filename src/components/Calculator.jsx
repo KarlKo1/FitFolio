@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, useTheme, Tabs, Tab } from "@mui/material";
+import { Box, useTheme, Tabs, Tab, styled, TextField } from "@mui/material";
 import BMI from "./BMI";
 import IdealWeight from "./IdealWeight";
 import DailyCalories from "./DailyCalories";
@@ -9,6 +9,18 @@ const Calculator = () => {
   const [showElement, setShowElement] = useState(false);
   const theme = useTheme();
   const fitnessCalculatorUrl = "https://fitness-calculator.p.rapidapi.com";
+
+  const StyledTextField = styled(TextField)({
+    "& label": {
+      color: theme.palette.primary[100],
+    },
+    "& label.Mui-focused": {
+      color: "white",
+    },
+    "& .Mui-underline:before": {
+      borderBottomColor: "white",
+    },
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +45,7 @@ const Calculator = () => {
           pl="5rem"
         >
           <Tabs
-            className={`reveal-fade ${showElement ? 'visible' : ''}`}
+            className={`reveal-fade ${showElement ? "visible" : ""}`}
             value={selectedTab}
             onChange={(e, val) => setSelectedTab(val)}
             TabIndicatorProps={{
@@ -89,12 +101,23 @@ const Calculator = () => {
           }}
         ></Box>
       </Box>
-      {selectedTab === 0 && <BMI fitnessCalculatorUrl={fitnessCalculatorUrl} />}
+      {selectedTab === 0 && (
+        <BMI
+          fitnessCalculatorUrl={fitnessCalculatorUrl}
+          StyledTextField={StyledTextField}
+        />
+      )}
       {selectedTab === 1 && (
-        <IdealWeight fitnessCalculatorUrl={fitnessCalculatorUrl} />
+        <IdealWeight
+          fitnessCalculatorUrl={fitnessCalculatorUrl}
+          StyledTextField={StyledTextField}
+        />
       )}
       {selectedTab === 2 && (
-        <DailyCalories fitnessCalculatorUrl={fitnessCalculatorUrl} />
+        <DailyCalories
+          fitnessCalculatorUrl={fitnessCalculatorUrl}
+          StyledTextField={StyledTextField}
+        />
       )}
     </>
   );

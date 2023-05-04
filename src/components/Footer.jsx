@@ -9,7 +9,12 @@ const Footer = () => {
         <Typography id="logo" sx={{ color: theme.palette.secondary[900] }}>
           FITFOLIO
         </Typography>
-        <Typography variant="h5" pb="40px" mt="20px">
+        <Typography
+          variant="h5"
+          pb="40px"
+          mt="20px"
+          color={theme.palette.grey[700]}
+        >
           <a href="https://www.freepik.com/free-vector/doodle-health-fitness-icons_1265560.htm#query=gym%20icon&position=0&from_view=search&track=ais">
             Image by dooder
           </a>{" "}

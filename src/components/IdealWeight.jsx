@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   Stack,
-  TextField,
   Button,
   Typography,
   useTheme,
@@ -12,7 +11,7 @@ import {
 } from "@mui/material";
 import { fitnessOptions, fetchData } from "../utils/fetchData";
 
-const IdealWeight = ({ fitnessCalculatorUrl }) => {
+const IdealWeight = ({ fitnessCalculatorUrl, StyledTextField }) => {
   const theme = useTheme();
   const [genderValue, setGenderValue] = useState("female");
   const [idealWeight, setIdealWeight] = useState("");
@@ -42,18 +41,29 @@ const IdealWeight = ({ fitnessCalculatorUrl }) => {
       setIdealWeight(idealWeightData.data);
     }
   };
+
   return (
     <Box height="50vh">
-      <form style={{ display: "flex" }} onSubmit={(e) => handleCalculate(e)}>
+      <form
+        style={{ display: "flex", height: "100%" }}
+        onSubmit={(e) => handleCalculate(e)}
+      >
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
           }}
           pl="5rem"
+          pt="2rem"
         >
-          <Typography variant="h2">Ideal Weight</Typography>
-          <Typography>
+          <Typography
+            variant="h2"
+            color={theme.palette.secondary[500]}
+            p="0.5rem 0 0.5rem 0"
+          >
+            Ideal Weight
+          </Typography>
+          <Typography width="75%">
             Your ideal weight is like a superhero outfit - it's unique to you
             and helps you feel your best. Just like how Superman needs the right
             suit to fight crime, your body needs the right weight to fight off
@@ -73,12 +83,26 @@ const IdealWeight = ({ fitnessCalculatorUrl }) => {
             p="20px"
             rowGap="0.5rem"
           >
-            <Typography>Calculator</Typography>
+            <Typography
+              fontSize="2rem"
+              sx={{
+                color: theme.palette.primary[100],
+              }}
+            >
+              Calculator
+            </Typography>
             <RadioGroup
               row
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="female"
               onChange={handleGenderChange}
+              sx={{
+                color: theme.palette.primary[100],
+                "& .MuiSvgIcon-root": {
+                  fontSize: 16,
+                  color: theme.palette.primary[100],
+                },
+              }}
             >
               <FormControlLabel
                 control={<Radio />}
@@ -87,10 +111,10 @@ const IdealWeight = ({ fitnessCalculatorUrl }) => {
               />
               <FormControlLabel control={<Radio />} label="Male" value="male" />
             </RadioGroup>
-            <TextField
+            <StyledTextField
               id="height"
               label="Height cm"
-              variant="outlined"
+              variant="filled"
               type="number"
               value={data.height}
               onChange={(e) => handleData(e)}

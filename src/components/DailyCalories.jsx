@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   Stack,
-  TextField,
   Button,
   Typography,
   useTheme,
@@ -12,7 +11,7 @@ import {
 } from "@mui/material";
 import { fitnessOptions, fetchData } from "../utils/fetchData";
 
-const DailyColories = ({ fitnessCalculatorUrl }) => {
+const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
   const theme = useTheme();
   const [genderValue, setGenderValue] = useState("female");
   const [levelValue, setLevelValue] = useState("level_1");
@@ -53,16 +52,26 @@ const DailyColories = ({ fitnessCalculatorUrl }) => {
   };
   return (
     <Box height="50vh">
-      <form style={{ display: "flex" }} onSubmit={(e) => handleCalculate(e)}>
+      <form
+        style={{ display: "flex", height: "100%" }}
+        onSubmit={(e) => handleCalculate(e)}
+      >
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
           }}
           pl="5rem"
+          pt="2rem"
         >
-          <Typography variant="h2">Daily Calory Requirement</Typography>
-          <Typography>
+          <Typography
+            variant="h2"
+            color={theme.palette.secondary[500]}
+            p="0.5rem 0 0.5rem 0"
+          >
+            Daily Calory Requirement
+          </Typography>
+          <Typography width="75%">
             Calories are your body's fuel. Your daily calorie requirement
             depends on your age, gender, weight, and activity level. Use an
             online calculator or consult with a registered dietitian to find
@@ -82,12 +91,26 @@ const DailyColories = ({ fitnessCalculatorUrl }) => {
             p="20px"
             rowGap="0.5rem"
           >
-            <Typography>Calculator</Typography>
+            <Typography
+              fontSize="2rem"
+              sx={{
+                color: theme.palette.primary[100],
+              }}
+            >
+              Calculator
+            </Typography>
             <RadioGroup
               row
               aria-labelledby="demo-radio-buttons-group-label"
               defaultValue="female"
               onChange={handleGenderChange}
+              sx={{
+                color: theme.palette.primary[100],
+                "& .MuiSvgIcon-root": {
+                  fontSize: 16,
+                  color: theme.palette.primary[100],
+                },
+              }}
             >
               <FormControlLabel
                 control={<Radio />}
@@ -96,26 +119,26 @@ const DailyColories = ({ fitnessCalculatorUrl }) => {
               />
               <FormControlLabel control={<Radio />} label="Male" value="male" />
             </RadioGroup>
-            <TextField
+            <StyledTextField
               id="age"
               label="Age"
-              variant="outlined"
+              variant="filled"
               type="number"
               value={data.age}
               onChange={(e) => handleData(e)}
             />
-            <TextField
+            <StyledTextField
               id="weight"
               label="Weight kg"
-              variant="outlined"
+              variant="filled"
               type="number"
               value={data.weight}
               onChange={(e) => handleData(e)}
             />
-            <TextField
+            <StyledTextField
               id="height"
               label="Height cm"
-              variant="outlined"
+              variant="filled"
               type="number"
               value={data.height}
               onChange={(e) => handleData(e)}
@@ -125,10 +148,17 @@ const DailyColories = ({ fitnessCalculatorUrl }) => {
               defaultValue="level_1"
               name="level"
               onChange={handleLevelChange}
+              sx={{
+                color: theme.palette.primary[100],
+                "& .MuiSvgIcon-root": {
+                  fontSize: 16,
+                  color: theme.palette.primary[100],
+                },
+              }}
             >
               <FormControlLabel
                 control={<Radio />}
-                label="Level 1 - Sedentary: little or no exercise"
+                label="Level 1 - Little or no exercise"
                 value="level_1"
               />
               <FormControlLabel
@@ -143,7 +173,7 @@ const DailyColories = ({ fitnessCalculatorUrl }) => {
               />
               <FormControlLabel
                 control={<Radio />}
-                label="Level 4 - Daily exercise or intense exercise 3-4 times/week"
+                label="Level 4 - Daily exercise"
                 value="level_4"
               />
               <FormControlLabel
@@ -153,7 +183,7 @@ const DailyColories = ({ fitnessCalculatorUrl }) => {
               />
               <FormControlLabel
                 control={<Radio />}
-                label="Level 6 - Very intense exercise daily, or physical job"
+                label="Level 6 - Intense exercise daily or physical job"
                 value="level_6"
               />
             </RadioGroup>
