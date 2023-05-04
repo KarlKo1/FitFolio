@@ -33,7 +33,7 @@ const Calculator = () => {
           pl="5rem"
         >
           <Tabs
-            className={`fade ${showElement ? "visible" : "hidden"}`}
+            className={`reveal-fade ${showElement ? 'visible' : ''}`}
             value={selectedTab}
             onChange={(e, val) => setSelectedTab(val)}
             TabIndicatorProps={{

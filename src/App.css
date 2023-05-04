@@ -39,16 +39,18 @@ a {
   font-size: clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem);
 }
 
-.fade {
-  transition: opacity 0.25s ease-in-out;
+.reveal-fade {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .visible {
   opacity: 1;
+  transform: translateX(0);
 }
-
-.hidden {
-  opacity: 0;
+.visible .reveal-fade {
+  opacity: 1;
 }
 
 .right-arrow,
