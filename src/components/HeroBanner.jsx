@@ -7,7 +7,6 @@ const HeroBanner = () => {
     <Box
       sx={{
         mt: { lg: "15rem", xs: "1.5rem" },
-        ml: { lg: "12rem", sm: "5rem" },
       }}
       position="relative"
     >

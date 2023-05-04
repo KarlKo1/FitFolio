@@ -59,6 +59,7 @@ const DailyColories = ({ fitnessCalculatorUrl }) => {
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
           }}
+          pl="5rem"
         >
           <Typography variant="h2">Daily Calory Requirement</Typography>
           <Typography>

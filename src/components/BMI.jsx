@@ -43,6 +43,7 @@ const BMI = ({ fitnessCalculatorUrl }) => {
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
           }}
+          pl="5rem"
         >
           <Typography variant="h2">BMI</Typography>
           <Typography>
@@ -59,7 +60,8 @@ const BMI = ({ fitnessCalculatorUrl }) => {
         <Box
           display="flex"
           sx={{ backgroundColor: theme.palette.secondary[500], flex: "1 1 0" }}
-          justifyContent="center"
+          justifyContent="center
+          "
         >
           <Stack
             alignItems="center"

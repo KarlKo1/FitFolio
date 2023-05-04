@@ -11,7 +11,7 @@ const ExerciseCard = ({ exercise }) => {
         borderColor: theme.palette.secondary[500],
       }}
       className="exercise-card"
-      to={`/exercise/${exercise.id}`}
+      href={`/exercise/${exercise.id}`}
     >
       <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
       <Stack direction="row">

@@ -1,26 +1,78 @@
 import React, { useState } from "react";
-import { Box, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Link,
+  Stack,
+  IconButton,
+  useTheme,
+} from "@mui/material";
 
-import Navbar from "../components/Navbar";
 import HeroBanner from "../components/HeroBanner";
 import SearchExercises from "../components/SearchExercises";
 import Exercises from "../components/Exercises";
 import HeroBannerImg from "../assets/images/hero-img.png";
 import Calculator from "../components/Calculator";
+import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
+import { useDispatch } from "react-redux";
+import { setMode } from "../state";
 
 const Home = () => {
   const [exercises, setExercises] = useState([]);
   const [bodyPart, setBodyPart] = useState("all");
   const theme = useTheme();
+  const dispatch = useDispatch();
 
   return (
     <Box>
-      <Box display="flex" height="100vh">
-        <Navbar />
+      <Box display="flex" height="95vh">
         <Box
-          sx={{ backgroundColor: theme.palette.secondary[500], flex: "2 1 0" }}
+          sx={{
+            backgroundColor: theme.palette.secondary[500],
+            flex: "2 1 0",
+          }}
           position="relative"
+          pl="5rem"
         >
+          <Box
+            className="left-navbar"
+            display="flex"
+            justifyContent="space-around"
+            pt="2.5rem"
+          >
+            <Link href="/" underline="none">
+              <Typography id="logo" sx={{ color: theme.palette.primary[100] }}>
+                FITFOLIO
+              </Typography>
+            </Link>
+            <Stack
+              direction="row"
+              fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
+              sx={{ gap: { lg: "60px", xs: "20px" } }}
+            >
+              <Link
+                href="/"
+                style={{
+                  textDecoration: "none",
+                  color: theme.palette.primary[100],
+                  borderBottom: "3px solid",
+                  borderColor: theme.palette.primary[100],
+                }}
+              >
+                Home
+              </Link>
+              <a
+                href="#exercises"
+                style={{
+                  textDecoration: "none",
+                  color: theme.palette.primary[100],
+                }}
+              >
+                Exercises
+              </a>
+            </Stack>
+          </Box>
+
           <Box
             sx={{
               backgroundColor: theme.palette.secondary[500],
@@ -42,17 +94,74 @@ const Home = () => {
               <span>It Up</span>
             </p>
           </Box>
+
           <HeroBanner />
-          <span className="bg-circle bg-circle-1"></span>
-          <span className="bg-circle bg-circle-3"></span>
+          <span
+            className="bg-circle bg-circle-1"
+            style={{
+              backgroundImage: `radial-gradient(${theme.palette.primary[100]}, ${theme.palette.secondary[500]})`,
+              boxShadow: `${theme.palette.primary[500]} 0px 4px 8px -2px,
+              ${theme.palette.secondary[500]} 0px 0px 0px 1px`,
+            }}
+          ></span>
+          <span
+            className="bg-circle bg-circle-3"
+            style={{
+              backgroundImage: `radial-gradient(${theme.palette.primary[100]}, ${theme.palette.secondary[500]})`,
+              boxShadow: `${theme.palette.primary[500]} 0px 4px 8px -2px,
+              ${theme.palette.secondary[500]} 0px 0px 0px 1px`,
+            }}
+          ></span>
         </Box>
         <Box
           sx={{ backgroundColor: theme.palette.primary[100], flex: "1 1 0" }}
         >
+          <Box className="right-navbar">
+            <Stack
+              direction="row"
+              fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
+              alignItems="center"
+              justifyContent="space-around"
+              pt="2rem"
+            >
+              <a
+                href="#bmi"
+                style={{
+                  textDecoration: "none",
+                  color: theme.palette.secondary[500],
+                  border: "3px solid",
+                  borderColor: theme.palette.secondary[500],
+                  borderRadius: "5px",
+                  padding: "0.25rem 1rem 0.25rem 1rem",
+                }}
+              >
+                Calculator
+              </a>
+              <IconButton onClick={() => dispatch(setMode())}>
+                {theme.palette.mode === "dark" ? (
+                  <DarkModeOutlined
+                    sx={{
+                      fontSize: "25px",
+                      color: theme.palette.secondary[500],
+                    }}
+                  />
+                ) : (
+                  <LightModeOutlined
+                    sx={{
+                      fontSize: "25px",
+                      color: theme.palette.secondary[500],
+                    }}
+                  />
+                )}
+              </IconButton>
+            </Stack>
+          </Box>
           <span
             className="bg-circle bg-circle-2"
-            sx={{
-              backgroundColor: theme.palette.primary[900],
+            style={{
+              backgroundImage: `radial-gradient(${theme.palette.primary[100]}, ${theme.palette.secondary[500]})`,
+              boxShadow: `${theme.palette.primary[500]} 0px 4px 8px -2px,
+              ${theme.palette.primary[100]} 0px 0px 0px 1px`,
             }}
           ></span>
         </Box>

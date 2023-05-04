@@ -45,7 +45,7 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
       id="exercises"
       sx={{ mt: { lg: "110px" }, display: "flex", flexDirection: "column" }}
       mt="50px"
-      p="20px"
+      p="0 5rem 0 5rem"
     >
       <Typography
         variant="h4"
