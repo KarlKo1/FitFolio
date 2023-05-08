@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 
 @font-face {
   font-family: "edosz";
-  src: local("Edo SZ"), url("../assets/fonts/edosz.ttf") format("truetype");
+  src: url("../fonts/edosz.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Neuropolitical";
-  src: url("//db.onlinewebfonts.com/t/d4270acd2ddf65bf084f644346e55f4c.eot");
+  src: url("../fonts/neuropolitical rg.otf") format("opentype");
 }
 
 * {
