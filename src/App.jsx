@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
