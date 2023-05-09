@@ -25,7 +25,11 @@ const Home = () => {
 
   return (
     <Box>
-      <Box display="flex" height="95vh">
+      <Box
+        display="flex"
+        height="95vh"
+        sx={{ flexDirection: { md: "row", xs: "column" } }}
+      >
         <Box
           sx={{
             backgroundColor: theme.palette.secondary[500],
@@ -37,18 +41,45 @@ const Home = () => {
           <Box
             className="left-navbar"
             display="flex"
-            justifyContent="space-around"
+            alignItems="center"
             pt="2.5rem"
+            sx={{
+              justifyContent: { md: "space-around", xs: "flex-start" },
+              gap: { md: "none", xs: "5rem" },
+            }}
           >
             <Link href="/" underline="none">
               <Typography id="logo" sx={{ color: theme.palette.primary[100] }}>
                 FITFOLIO
               </Typography>
             </Link>
+            <IconButton
+              onClick={() => dispatch(setMode())}
+              sx={{ display: { md: "none", xs: "flex" } }}
+            >
+              {theme.palette.mode === "dark" ? (
+                <DarkModeOutlined
+                  sx={{
+                    fontSize: "25px",
+                    color: theme.palette.primary[100],
+                  }}
+                />
+              ) : (
+                <LightModeOutlined
+                  sx={{
+                    fontSize: "25px",
+                    color: theme.palette.primary[100],
+                  }}
+                />
+              )}
+            </IconButton>
             <Stack
               direction="row"
               fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
-              sx={{ gap: { lg: "60px", xs: "20px" } }}
+              sx={{
+                gap: { lg: "60px", xs: "20px" },
+                display: { xs: "none", lg: "flex" },
+              }}
             >
               <Link
                 href="/"
@@ -116,16 +147,22 @@ const Home = () => {
         <Box
           sx={{ backgroundColor: theme.palette.primary[100], flex: "1 1 0" }}
         >
-          <Box className="right-navbar">
+          <Box
+            className="right-navbar"
+            sx={{
+              display: { xs: "none", lg: "flex" },
+            }}
+          >
             <Stack
               direction="row"
               fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
               alignItems="center"
               justifyContent="space-around"
               pt="2rem"
+              width="100%"
             >
               <a
-                href="#bmi"
+                href="#calculator"
                 style={{
                   textDecoration: "none",
                   color: theme.palette.secondary[500],
@@ -137,7 +174,10 @@ const Home = () => {
               >
                 Calculator
               </a>
-              <IconButton onClick={() => dispatch(setMode())}>
+              <IconButton
+                onClick={() => dispatch(setMode())}
+                sx={{ display: { md: "flex" } }}
+              >
                 {theme.palette.mode === "dark" ? (
                   <DarkModeOutlined
                     sx={{

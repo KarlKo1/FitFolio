@@ -8,9 +8,9 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
   return (
     <Box
       sx={{
-        mt: { lg: "100px", sx: "0" },
+        mt: { lg: "100px", xs: "0" },
         position: "relative",
-        width: { lg: "100%", xs: "125%" },
+        width: "100%",
         p: "20px",
       }}
     >
@@ -31,7 +31,7 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
         direction="row"
         sx={{
           position: "relative",
-          width: { lg: "100%", xs: "125%" },
+          width: "100%",
           p: "20px",
         }}
       >

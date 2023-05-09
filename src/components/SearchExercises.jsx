@@ -50,7 +50,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       alignItems="center"
       mt="37px"
       justifyContent="center"
-      p="0 5rem 0 5rem"
+      sx={{ p: { md: "0 5rem 0 5rem", xs: "0" } }}
     >
       <Typography
         fontWeight="700"
@@ -97,7 +97,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       <Box
         sx={{
           position: "relative",
-          width: { lg: "100%", xs: "125%" },
+          width: "100%",
           p: "20px",
         }}
       >

@@ -6,12 +6,12 @@ const HeroBanner = () => {
   return (
     <Box
       sx={{
-        mt: { lg: "15rem", xs: "1.5rem" },
+        mt: { lg: "10rem", xs: "1.5rem" },
       }}
       position="relative"
     >
       <Typography
-        sx={{ color: theme.palette.primary[100] }}
+        sx={{ color: theme.palette.primary[100], display: { xs: "none" } }}
         fontWeight="600"
         fontSize="26px"
       >
@@ -52,7 +52,7 @@ const HeroBanner = () => {
         className="hero-text"
         sx={{
           opacity: 0.1,
-          color: theme.palette.secondary[900],
+          color: theme.palette.primary[100],
         }}
       >
         Exercise

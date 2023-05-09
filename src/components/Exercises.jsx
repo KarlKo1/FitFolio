@@ -43,9 +43,13 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
   return (
     <Box
       id="exercises"
-      sx={{ mt: { lg: "110px" }, display: "flex", flexDirection: "column" }}
+      sx={{
+        mt: { lg: "110px" },
+        p: { md: "0 5rem 0 5rem", xs: "0" },
+        display: "flex",
+        flexDirection: "column",
+      }}
       mt="50px"
-      p="0 5rem 0 5rem"
     >
       <Typography
         variant="h4"

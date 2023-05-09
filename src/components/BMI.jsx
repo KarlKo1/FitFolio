@@ -29,18 +29,21 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
   };
 
   return (
-    <Box height="50vh">
+    <Box height="50vh" sx={{ height: { md: "50vh", xs: "100%" } }}>
       <form
-        style={{ display: "flex", height: "100%" }}
+        className="calculator-form"
+        style={{
+          display: "flex",
+          height: "100%",
+        }}
         onSubmit={(e) => handleCalculate(e)}
       >
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
+            p: { md: "2rem 0 0 5rem", xs: "0 1rem 0 1rem" },
           }}
-          pl="5rem"
-          pt="2rem"
         >
           <Typography
             variant="h2"
@@ -49,7 +52,7 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
           >
             BMI
           </Typography>
-          <Typography width="75%">
+          <Typography sx={{ width: { md: "75%", xs: "100%" } }}>
             BMI stands for Body Mass Index, but you can call it your Body Math
             Indicator! It's a way to figure out if your weight is healthy for
             your height. All you need to do is plug in your weight and height
@@ -66,12 +69,7 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
           justifyContent="center
           "
         >
-          <Stack
-            alignItems="center"
-            justifyContent="center"
-            p="20px"
-            rowGap="0.5rem"
-          >
+          <Stack alignItems="center" justifyContent="center" rowGap="0.5rem">
             <Typography
               fontSize="2rem"
               sx={{

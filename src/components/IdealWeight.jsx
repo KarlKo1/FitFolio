@@ -43,8 +43,9 @@ const IdealWeight = ({ fitnessCalculatorUrl, StyledTextField }) => {
   };
 
   return (
-    <Box height="50vh">
+    <Box height="50vh" sx={{ height: { md: "50vh", xs: "100%" } }}>
       <form
+        className="calculator-form"
         style={{ display: "flex", height: "100%" }}
         onSubmit={(e) => handleCalculate(e)}
       >
@@ -52,9 +53,8 @@ const IdealWeight = ({ fitnessCalculatorUrl, StyledTextField }) => {
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
+            p: { md: "2rem 0 0 5rem", xs: "0 1rem 0 1rem" },
           }}
-          pl="5rem"
-          pt="2rem"
         >
           <Typography
             variant="h2"
@@ -63,7 +63,7 @@ const IdealWeight = ({ fitnessCalculatorUrl, StyledTextField }) => {
           >
             Ideal Weight
           </Typography>
-          <Typography width="75%">
+          <Typography sx={{ width: { md: "75%", xs: "100%" } }}>
             Your ideal weight is like a superhero outfit - it's unique to you
             and helps you feel your best. Just like how Superman needs the right
             suit to fight crime, your body needs the right weight to fight off
@@ -77,12 +77,7 @@ const IdealWeight = ({ fitnessCalculatorUrl, StyledTextField }) => {
           sx={{ backgroundColor: theme.palette.secondary[500], flex: "1 1 0" }}
           justifyContent="center"
         >
-          <Stack
-            alignItems="center"
-            justifyContent="center"
-            p="20px"
-            rowGap="0.5rem"
-          >
+          <Stack alignItems="center" justifyContent="center" rowGap="0.5rem">
             <Typography
               fontSize="2rem"
               sx={{

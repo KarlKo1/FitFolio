@@ -36,11 +36,12 @@ const Calculator = () => {
 
   return (
     <>
-      <Box display="flex">
+      <Box display="flex" id="calculator">
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
-            flex: "2 1 0",
+            flex: { md: "2 1 0", xs: "none" },
+            pl: { md: "5rem", xs: "none" },
           }}
           pl="5rem"
         >
