@@ -19,7 +19,7 @@ function Root() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 5000);
 
     const prefersDarkMode = window.matchMedia(
       "(prefers-color-scheme: dark)"
