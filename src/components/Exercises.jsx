@@ -42,7 +42,6 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
   }, [bodyPart]);
   return (
     <Box
-      id="exercises"
       sx={{
         mt: { lg: "110px" },
         p: { md: "0 5rem 0 5rem", xs: "0" },

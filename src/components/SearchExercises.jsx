@@ -51,6 +51,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       mt="37px"
       justifyContent="center"
       sx={{ p: { md: "0 5rem 0 5rem", xs: "0" } }}
+      id="exercises"
     >
       <Typography
         fontWeight="700"
