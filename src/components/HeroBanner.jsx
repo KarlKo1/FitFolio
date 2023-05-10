@@ -46,17 +46,6 @@ const HeroBanner = () => {
       >
         Explore Now
       </Button>
-      <Typography
-        fontWeight="600"
-        fontSize="200px"
-        className="hero-text"
-        sx={{
-          opacity: 0.1,
-          color: theme.palette.primary[100],
-        }}
-      >
-        Exercise
-      </Typography>
     </Box>
   );
 };
