@@ -131,16 +131,12 @@ const Home = () => {
             className="bg-circle bg-circle-1"
             style={{
               backgroundImage: `radial-gradient(${theme.palette.primary[100]}, ${theme.palette.secondary[500]})`,
-              boxShadow: `${theme.palette.primary[500]} 0px 4px 8px -2px,
-              ${theme.palette.secondary[500]} 0px 0px 0px 1px`,
             }}
           ></span>
           <span
             className="bg-circle bg-circle-3"
             style={{
               backgroundImage: `radial-gradient(${theme.palette.primary[100]}, ${theme.palette.secondary[500]})`,
-              boxShadow: `${theme.palette.primary[500]} 0px 4px 8px -2px,
-              ${theme.palette.secondary[500]} 0px 0px 0px 1px`,
             }}
           ></span>
         </Box>
@@ -200,8 +196,6 @@ const Home = () => {
             className="bg-circle bg-circle-2"
             style={{
               backgroundImage: `radial-gradient(${theme.palette.primary[100]}, ${theme.palette.secondary[500]})`,
-              boxShadow: `${theme.palette.primary[500]} 0px 4px 8px -2px,
-              ${theme.palette.primary[100]} 0px 0px 0px 1px`,
             }}
           ></span>
         </Box>
