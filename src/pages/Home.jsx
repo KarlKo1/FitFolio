@@ -86,8 +86,6 @@ const Home = () => {
                 style={{
                   textDecoration: "none",
                   color: theme.palette.primary[100],
-                  borderBottom: "3px solid",
-                  borderColor: theme.palette.primary[100],
                 }}
               >
                 Home
