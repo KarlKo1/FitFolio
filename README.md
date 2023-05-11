@@ -21,3 +21,6 @@ A fitness application where users can find exercises. Application also includes 
 ## Contributing
 
 If you'd like to contribute to the project, feel free to submit a pull request or open an issue.
+
+[![GitHub issues](https://img.shields.io/github/issues/KarlKo1/FitFolio)](https://github.com/KarlKo1/FitFolio/issues)
+[![GitHub stars](https://img.shields.io/github/stars/KarlKo1/FitFolio)](https://github.com/KarlKo1/FitFolio/stargazers)
