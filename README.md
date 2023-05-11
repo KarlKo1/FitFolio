@@ -2,10 +2,6 @@
 
 A fitness application where users can find exercises. Application also includes calculators about body mass index (BMI), daily calory requirement and ideal weight calculations. 
 
-## Live Demo
-
-You can try the live demo at: https://fitfolio-smss.onrender.com/
-
 ## Features
 
 - Search exercises
