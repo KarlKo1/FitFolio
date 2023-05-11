@@ -78,7 +78,7 @@ const Home = () => {
               fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
               sx={{
                 gap: { lg: "60px", xs: "20px" },
-                display: { xs: "none", lg: "flex" },
+                display: { xs: "none", md: "flex" },
               }}
             >
               <Link
@@ -144,7 +144,7 @@ const Home = () => {
           <Box
             className="right-navbar"
             sx={{
-              display: { xs: "none", lg: "flex" },
+              display: { xs: "none", md: "flex" },
             }}
           >
             <Stack

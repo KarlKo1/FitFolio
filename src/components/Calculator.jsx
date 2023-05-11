@@ -11,6 +11,7 @@ const Calculator = () => {
   const fitnessCalculatorUrl = "https://fitness-calculator.p.rapidapi.com";
 
   const StyledTextField = styled(TextField)({
+    pt: "14px",
     "& label": {
       color: theme.palette.primary[100],
     },
@@ -36,11 +37,15 @@ const Calculator = () => {
 
   return (
     <>
-      <Box display="flex" id="calculator">
+      <Box
+        display="flex"
+        id="calculator"
+        sx={{ pl: { xs: "1rem", md: "0" }, mt: { sm: "5rem", md: "0" } }}
+      >
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
-            flex: { md: "2 1 0", xs: "none" },
+            flex: { md: "2 1 0", xs: "2 1 0" },
             pl: { md: "5rem", xs: "none" },
           }}
           pl="5rem"
@@ -99,6 +104,7 @@ const Calculator = () => {
           sx={{
             backgroundColor: theme.palette.secondary[500],
             flex: "1 1 0",
+            display: { xs: "none", sm: "flex" },
           }}
         ></Box>
       </Box>

@@ -29,7 +29,7 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
   };
 
   return (
-    <Box height="50vh" sx={{ height: { md: "50vh", xs: "100%" } }}>
+    <Box sx={{ height: { md: "35vh", xs: "100%" } }}>
       <form
         className="calculator-form"
         style={{
@@ -42,7 +42,7 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
-            p: { md: "2rem 0 0 5rem", xs: "0 1rem 0 1rem" },
+            p: { md: "2rem 0 0 5rem", xs: "0 0 0 1rem" },
           }}
         >
           <Typography
@@ -69,7 +69,11 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
           justifyContent="center
           "
         >
-          <Stack alignItems="center" justifyContent="center" rowGap="0.5rem">
+          <Stack
+            alignItems="center"
+            justifyContent="space-evenly"
+            rowGap="0.5rem"
+          >
             <Typography
               fontSize="2rem"
               sx={{

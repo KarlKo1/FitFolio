@@ -48,7 +48,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   return (
     <Stack
       alignItems="center"
-      mt="37px"
+      mt="90px"
       justifyContent="center"
       sx={{ p: { md: "0 5rem 0 5rem", xs: "0" } }}
       id="exercises"
