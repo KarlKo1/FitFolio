@@ -11,7 +11,7 @@ const ExerciseCard = ({ exercise }) => {
         borderColor: theme.palette.secondary[500],
       }}
       className="exercise-card"
-      href={`/exercise/${exercise.id}`}
+      to={`/exercise/${exercise.id}`}
     >
       <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
       <Stack direction="row">
@@ -33,9 +33,10 @@ const ExerciseCard = ({ exercise }) => {
             mr: "20px",
             color: "#fff",
             background: "#f3ae18",
-            fontSize: "14px",
+            fontSize: "clamp(0.75rem, 0.0248rem + 2.4793vw, 3rem)",
             borderRadius: "20px",
             textTransform: "capitalize",
+            flexWrap: "wrap",
           }}
         >
           {exercise.target}
@@ -47,8 +48,10 @@ const ExerciseCard = ({ exercise }) => {
         fontWeight="bold"
         pb="10px"
         textTransform="capitalize"
-        fontSize="22px"
-        sx={{ mt: { lg: "11px", xs: "0" } }}
+        sx={{
+          mt: { lg: "11px", xs: "0" },
+          fontSize: "clamp(0.75rem, 0.0248rem + 2.4793vw, 3rem)",
+        }}
       >
         {exercise.name}
       </Typography>

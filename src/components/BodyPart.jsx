@@ -11,7 +11,7 @@ import heart from "../assets/icons/heart.svg";
 import stationaryBicycle from "../assets/icons/stationary-bicycle.svg";
 import stopper from "../assets/icons/stopper.svg";
 
-const BodyPart = ({ item, bodyPart, setBodyPart, resultRef }) => {
+const BodyPart = ({ item, bodyPart, setBodyPart }) => {
   const theme = useTheme();
   const getGategory = (gategory) => {
     switch (gategory) {
@@ -39,8 +39,6 @@ const BodyPart = ({ item, bodyPart, setBodyPart, resultRef }) => {
         return dumbell;
     }
   };
-  const executeScroll = () =>
-    resultRef.current.scrollIntoView({ behavior: "smooth" });
   return (
     <Stack
       type="button"
@@ -58,7 +56,6 @@ const BodyPart = ({ item, bodyPart, setBodyPart, resultRef }) => {
       }}
       onClick={() => {
         setBodyPart(item);
-        executeScroll();
       }}
     >
       <img

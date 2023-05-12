@@ -146,6 +146,8 @@ a {
   width: 387px;
   height: 381px;
   text-decoration: none;
+  align-items: center;
+  justify-content: center;
 }
 
 .circle {
@@ -186,10 +188,18 @@ a {
   justify-content: center;
 }
 
+.detail-image {
+  border-radius: 20px;
+}
+
+.detail-icon {
+  max-width: 100%;
+}
+
 @media screen and (max-width: 1200px) {
   .detail-image {
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    border-radius: 20px;
   }
 
   .left-arrow,

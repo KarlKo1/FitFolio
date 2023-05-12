@@ -14,7 +14,13 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
         p: "20px",
       }}
     >
-      <Typography variant="h3" mb={5}>
+      <Typography
+        variant="h3"
+        mb={5}
+        sx={{
+          fontSize: "clamp(2rem, 1.0331rem + 3.3058vw, 5rem)",
+        }}
+      >
         Exercises that target the same muscle group
       </Typography>
       <Stack direction="row" sx={{ p: "2", position: "relative" }}>

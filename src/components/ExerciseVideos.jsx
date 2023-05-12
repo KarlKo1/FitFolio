@@ -5,8 +5,14 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
   const theme = useTheme();
   if (!exerciseVideos.length) return "Loading...";
   return (
-    <Box sx={{ marginTop: { lg: "200px", xs: "200px" } }} p="20px">
-      <Typography variant="h3" mb="33px">
+    <Box p="20px">
+      <Typography
+        variant="h3"
+        mb="33px"
+        sx={{
+          fontSize: "clamp(2rem, 1.0331rem + 3.3058vw, 5rem)",
+        }}
+      >
         Youtube videos about{" "}
         <span
           style={{
@@ -18,11 +24,11 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
         </span>
       </Typography>
       <Stack
-        justifyContent="flex-start"
+        justifyContent="center"
         flexWrap="wrap"
         alignItems="center"
         sx={{
-          flexDirection: { lg: "column", xs: "row" },
+          flexDirection: "row",
           gap: { lg: "110px", xs: "0" },
         }}
       >
@@ -34,9 +40,19 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
             rel="noreferrer"
             key={index}
           >
-            <img src={item.video.thumbnails[0].url} alt={item.video.title} />
+            <img
+              src={item.video.thumbnails[0].url}
+              alt={item.video.title}
+              width="75%"
+            />
             <Box>
-              <Typography variant="h6" color={theme.palette.primary[500]}>
+              <Typography
+                variant="h6"
+                color={theme.palette.primary[500]}
+                sx={{
+                  fontSize: "clamp(1rem, 0.3554rem + 2.2039vw, 3rem)",
+                }}
+              >
                 {item.video.title}
               </Typography>
               <Typography variant="h7" color={theme.palette.primary[500]}>

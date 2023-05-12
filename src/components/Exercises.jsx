@@ -50,13 +50,15 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
       }}
       mt="50px"
     >
-      <Typography
-        variant="h4"
-        ml="30px"
-        sx={{ color: theme.palette.secondary[500] }}
-      >
-        Showing Results
-      </Typography>
+      {exercises.length > 0 && (
+        <Typography
+          variant="h4"
+          ml="30px"
+          sx={{ color: theme.palette.secondary[500] }}
+        >
+          Showing Results {exercises.length}
+        </Typography>
+      )}
       <Stack
         direction="row"
         sx={{ gap: { lg: "110px", xs: "50px" } }}
