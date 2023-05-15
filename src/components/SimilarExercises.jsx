@@ -23,24 +23,23 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
       >
         Exercises that target the same muscle group
       </Typography>
-      <Stack direction="row" sx={{ p: "2", position: "relative" }}>
+      <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
         {targetMuscleExercises.length ? (
           <HorizontalScrollbar data={targetMuscleExercises} />
         ) : (
           <Loader />
         )}
       </Stack>
-      <Typography variant="h3" mb={5}>
-        Exercises that use the same equipment
-      </Typography>
-      <Stack
-        direction="row"
+      <Typography
+        variant="h3"
+        mb={5}
         sx={{
-          position: "relative",
-          width: "100%",
-          p: "20px",
+          fontSize: "clamp(2rem, 1.0331rem + 3.3058vw, 5rem)",
         }}
       >
+        Exercises that use the same equipment
+      </Typography>
+      <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
         {equipmentExercises.length ? (
           <HorizontalScrollbar data={equipmentExercises} />
         ) : (

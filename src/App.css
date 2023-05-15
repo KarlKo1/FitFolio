@@ -108,7 +108,6 @@ a {
 }
 
 .exercise-card {
-  width: 40%;
   background: #fff;
   border-radius: 16px;
   text-decoration: none;
@@ -142,12 +141,9 @@ a {
 .exercise-video {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  width: 387px;
-  height: 381px;
   text-decoration: none;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .circle {
@@ -185,7 +181,7 @@ a {
 }
 
 .react-horizontal-scrolling-menu--scroll-container {
-  justify-content: center;
+  gap: 1rem;
 }
 
 .detail-image {
@@ -198,18 +194,13 @@ a {
 
 @media screen and (max-width: 1200px) {
   .detail-image {
-    width: 240px;
+    width: 300px;
     border-radius: 20px;
   }
 
   .left-arrow,
   .right-arrow {
     position: static !important;
-  }
-
-  .exercise-video {
-    width: 320px;
-    height: 300px;
   }
 }
 

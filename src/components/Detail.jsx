@@ -23,11 +23,8 @@ const Detail = ({ exerciseDetail }) => {
     },
   ];
   return (
-    <Stack
-      gap="60px"
-      sx={{ flexDirection: { lg: "row" }, p: "20px", alignItems: "center" }}
-    >
-      <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
+    <Stack gap="60px" sx={{ flexDirection: { lg: "row" }, p: "20px" }}>
+      <Stack sx={{ gap: "1.5rem", alignItems: "center" }}>
         <Typography
           variant="h3"
           textTransform="capitalize"
@@ -43,28 +40,30 @@ const Detail = ({ exerciseDetail }) => {
           to mood enhancement and increased energy levels.
         </Typography>
         <img src={gifUrl} alt={name} className="detail-image" loading="lazy" />
-        {extraDetail.map((item, index) => (
-          <Stack key={index} direction="row" gap="24px" alignItems="center">
-            <Box
-              sx={{
-                background: "#fff2db",
-                borderRadius: "50%",
-                width: "15vw",
-                maxWidth: "100px",
-                height: "15vw",
-                maxHeight: "100px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img src={item.icon} alt={bodyPart} className="detail-icon" />
-            </Box>
-            <Typography variant="h5" textTransform="capitalize">
-              {item.name}
-            </Typography>
-          </Stack>
-        ))}
+        <Box display="flex" flexDirection="column" gap="1.5rem">
+          {extraDetail.map((item, index) => (
+            <Stack key={index} direction="row" gap="1.5rem" alignItems="center">
+              <Box
+                sx={{
+                  background: "#fff2db",
+                  borderRadius: "50%",
+                  width: "20vw",
+                  maxWidth: "100px",
+                  height: "20vw",
+                  maxHeight: "100px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={item.icon} alt={bodyPart} className="detail-icon" />
+              </Box>
+              <Typography variant="h5" textTransform="capitalize">
+                {item.name}
+              </Typography>
+            </Stack>
+          ))}
+        </Box>
       </Stack>
     </Stack>
   );

@@ -14,43 +14,57 @@ const ExerciseCard = ({ exercise }) => {
       to={`/exercise/${exercise.id}`}
     >
       <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
-      <Stack direction="row">
+      <Stack
+        direction="row"
+        display="flex"
+        flexWrap="wrap"
+        alignItems="center"
+        justifyContent="center"
+        gap="5px"
+      >
         <Button
           sx={{
-            ml: "20px",
+            ml: { md: "20px", xs: "5px" },
+            mr: { md: "20px", xs: "5px" },
             color: "#fff",
             background: theme.palette.secondary[500],
-            fontSize: "14px",
+            fontSize: "clamp(0.6rem, -0.1736rem + 2.6446vw, 3rem)",
             borderRadius: "20px",
             textTransform: "capitalize",
+            flexWrap: "wrap",
+            width: { md: "64px", xs: "24px" },
           }}
         >
           {exercise.bodyPart}
         </Button>
         <Button
           sx={{
-            ml: "20px",
-            mr: "20px",
+            ml: { md: "20px", xs: "5px" },
+            mr: { md: "20px", xs: "5px" },
             color: "#fff",
             background: "#f3ae18",
-            fontSize: "clamp(0.75rem, 0.0248rem + 2.4793vw, 3rem)",
+            fontSize: "clamp(0.6rem, -0.1736rem + 2.6446vw, 3rem)",
             borderRadius: "20px",
             textTransform: "capitalize",
             flexWrap: "wrap",
+            width: { md: "64px", xs: "24px" },
           }}
         >
           {exercise.target}
         </Button>
       </Stack>
       <Typography
-        ml="21px"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
         color="#000"
         fontWeight="bold"
-        pb="10px"
+        pl="5px"
+        pr="5px"
         textTransform="capitalize"
         sx={{
-          mt: { lg: "11px", xs: "0" },
-          fontSize: "clamp(0.75rem, 0.0248rem + 2.4793vw, 3rem)",
+          mt: { lg: "11px", xs: "5px" },
+          fontSize: "clamp(0.6rem, -0.1736rem + 2.6446vw, 3rem)",
         }}
       >
         {exercise.name}

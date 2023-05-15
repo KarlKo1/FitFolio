@@ -48,14 +48,14 @@ const ExerciseDetail = () => {
   }, [id]);
   return (
     <Box
-      sx={{
-        width: "80%",
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+    // sx={{
+    //   width: "80%",
+    //   margin: "0 auto",
+    //   display: "flex",
+    //   flexDirection: "column",
+    //   alignItems: "center",
+    //   justifyContent: "center",
+    // }}
     >
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos
