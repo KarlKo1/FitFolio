@@ -112,6 +112,7 @@ a {
   border-radius: 16px;
   text-decoration: none;
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   flex-direction: column;
   padding-bottom: 10px;
@@ -138,12 +139,16 @@ a {
   border-color: transparent !important;
 }
 
-.exercise-video {
+/* .exercise-video {
   display: flex;
   flex-direction: column;
   text-decoration: none;
   align-items: center;
   justify-content: space-evenly;
+} */
+
+.react-horizontal-scrolling-menu--item {
+  display: flex;
 }
 
 .circle {

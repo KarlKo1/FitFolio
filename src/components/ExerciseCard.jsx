@@ -54,14 +54,12 @@ const ExerciseCard = ({ exercise }) => {
         </Button>
       </Stack>
       <Typography
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
         color="#000"
         fontWeight="bold"
         pl="5px"
         pr="5px"
         textTransform="capitalize"
+        textAlign="center"
         sx={{
           mt: { lg: "11px", xs: "5px" },
           fontSize: "clamp(0.6rem, -0.1736rem + 2.6446vw, 3rem)",

@@ -39,30 +39,51 @@ const Detail = ({ exerciseDetail }) => {
           Incorporating this exercise into your fitness routine can contribute
           to mood enhancement and increased energy levels.
         </Typography>
-        <img src={gifUrl} alt={name} className="detail-image" loading="lazy" />
-        <Box display="flex" flexDirection="column" gap="1.5rem">
-          {extraDetail.map((item, index) => (
-            <Stack key={index} direction="row" gap="1.5rem" alignItems="center">
-              <Box
-                sx={{
-                  background: "#fff2db",
-                  borderRadius: "50%",
-                  width: "20vw",
-                  maxWidth: "100px",
-                  height: "20vw",
-                  maxHeight: "100px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            width: "100%",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            gap: "1.5rem",
+          }}
+        >
+          <img
+            src={gifUrl}
+            alt={name}
+            className="detail-image"
+            loading="lazy"
+          />
+          <Box display="flex" flexDirection="column" gap="1.5rem">
+            {extraDetail.map((item, index) => (
+              <Stack
+                key={index}
+                direction="row"
+                gap="1.5rem"
+                alignItems="center"
               >
-                <img src={item.icon} alt={bodyPart} className="detail-icon" />
-              </Box>
-              <Typography variant="h5" textTransform="capitalize">
-                {item.name}
-              </Typography>
-            </Stack>
-          ))}
+                <Box
+                  sx={{
+                    background: "#fff2db",
+                    borderRadius: "50%",
+                    width: "20vw",
+                    maxWidth: "100px",
+                    height: "20vw",
+                    maxHeight: "100px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img src={item.icon} alt={bodyPart} className="detail-icon" />
+                </Box>
+                <Typography variant="h5" textTransform="capitalize">
+                  {item.name}
+                </Typography>
+              </Stack>
+            ))}
+          </Box>
         </Box>
       </Stack>
     </Stack>

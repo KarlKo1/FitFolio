@@ -47,16 +47,7 @@ const ExerciseDetail = () => {
     fetchExercisesData();
   }, [id]);
   return (
-    <Box
-    // sx={{
-    //   width: "80%",
-    //   margin: "0 auto",
-    //   display: "flex",
-    //   flexDirection: "column",
-    //   alignItems: "center",
-    //   justifyContent: "center",
-    // }}
-    >
+    <Box>
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos
         exerciseVideos={exerciseVideos}
