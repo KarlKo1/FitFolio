@@ -39,8 +39,12 @@ const HeroBanner = () => {
       <Button
         variant="contained"
         sx={{
-          backgroundColor: theme.palette.secondary[900],
-          color: theme.palette.secondary[500],
+          backgroundColor: theme.palette.primary[100],
+          color: theme.palette.primary[500],
+          "&:hover": {
+            color: theme.palette.primary[100],
+            backgroundColor: theme.palette.secondary[500],
+          },
         }}
         href="#exercises"
       >
