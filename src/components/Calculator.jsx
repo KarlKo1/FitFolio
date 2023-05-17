@@ -37,23 +37,21 @@ const Calculator = () => {
 
   return (
     <>
-      <Box
-        display="flex"
-        id="calculator"
-        sx={{ pl: { xs: "1rem", md: "0" }, mt: { sm: "5rem", md: "0" } }}
-      >
+      <Box display="flex" id="calculator" sx={{ mt: "0" }}>
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: { md: "2 1 0", xs: "2 1 0" },
             pl: { md: "5rem", xs: "none" },
+            display: "flex",
+            justifyContent: "center",
           }}
-          pl="5rem"
         >
           <Tabs
             className={`reveal-fade ${showElement ? "visible" : ""}`}
             value={selectedTab}
             onChange={(e, val) => setSelectedTab(val)}
+            sx={{ justifyContent: "center" }}
             TabIndicatorProps={{
               style: {
                 backgroundColor: theme.palette.secondary[500],
@@ -65,7 +63,7 @@ const Calculator = () => {
               label={
                 <span
                   style={{
-                    fontSize: "1rem",
+                    fontSize: "clamp(0.75rem, 0.6694rem + 0.2755vw, 1rem)",
                     color: theme.palette.secondary[500],
                   }}
                 >
@@ -77,7 +75,7 @@ const Calculator = () => {
               label={
                 <span
                   style={{
-                    fontSize: "1rem",
+                    fontSize: "clamp(0.75rem, 0.6694rem + 0.2755vw, 1rem)",
                     color: theme.palette.secondary[500],
                   }}
                 >
@@ -90,7 +88,7 @@ const Calculator = () => {
               label={
                 <span
                   style={{
-                    fontSize: "1rem",
+                    fontSize: "clamp(0.75rem, 0.6694rem + 0.2755vw, 1rem)",
                     color: theme.palette.secondary[500],
                   }}
                 >
@@ -105,6 +103,7 @@ const Calculator = () => {
             backgroundColor: theme.palette.secondary[500],
             flex: "1 1 0",
             display: { xs: "none", sm: "flex" },
+            pl: { xs: "2rem", md: "0" },
           }}
         ></Box>
       </Box>

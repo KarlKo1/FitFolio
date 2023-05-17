@@ -28,7 +28,7 @@ const ExerciseCard = ({ exercise }) => {
             mr: { md: "20px", xs: "5px" },
             color: "#fff",
             background: theme.palette.secondary[500],
-            fontSize: "clamp(0.6rem, -0.1736rem + 2.6446vw, 3rem)",
+            fontSize: "clamp(0.6rem, 0.3905rem + 0.7163vw, 1.25rem)",
             borderRadius: "20px",
             textTransform: "capitalize",
             flexWrap: "wrap",
@@ -43,7 +43,7 @@ const ExerciseCard = ({ exercise }) => {
             mr: { md: "20px", xs: "5px" },
             color: "#fff",
             background: "#f3ae18",
-            fontSize: "clamp(0.6rem, -0.1736rem + 2.6446vw, 3rem)",
+            fontSize: "clamp(0.6rem, 0.3905rem + 0.7163vw, 1.25rem)",
             borderRadius: "20px",
             textTransform: "capitalize",
             flexWrap: "wrap",
@@ -62,7 +62,7 @@ const ExerciseCard = ({ exercise }) => {
         textAlign="center"
         sx={{
           mt: { lg: "11px", xs: "5px" },
-          fontSize: "clamp(0.6rem, -0.1736rem + 2.6446vw, 3rem)",
+          fontSize: "clamp(0.6rem, 0.2293rem + 1.2672vw, 1.75rem)",
         }}
       >
         {exercise.name}

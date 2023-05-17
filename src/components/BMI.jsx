@@ -42,13 +42,14 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
           sx={{
             backgroundColor: theme.palette.primary[100],
             flex: "2 1 0",
-            p: { md: "2rem 0 0 5rem", xs: "0 0 0 1rem" },
+            p: { md: "2rem 0 0 5rem", xs: "2rem" },
           }}
         >
           <Typography
             variant="h2"
             color={theme.palette.secondary[500]}
             p="0.5rem 0 0.5rem 0"
+            fontSize="clamp(2rem, 1.436rem + 1.9284vw, 3.75rem)"
           >
             BMI
           </Typography>
@@ -65,7 +66,11 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
         </Box>
         <Box
           display="flex"
-          sx={{ backgroundColor: theme.palette.secondary[500], flex: "1 1 0" }}
+          sx={{
+            backgroundColor: theme.palette.secondary[500],
+            flex: "1 1 0",
+            p: { xs: "2rem", md: "0" },
+          }}
           justifyContent="center
           "
         >
