@@ -2,29 +2,69 @@ import React, { useState } from "react";
 import { Box, Stack, Button, Typography, useTheme } from "@mui/material";
 import { fitnessOptions, fetchData } from "../utils/fetchData";
 
-const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
+const BMI = ({
+  fitnessCalculatorUrl,
+  StyledTextField,
+  handleTouch,
+  handleBlur,
+}) => {
   const theme = useTheme();
   const [bmi, setBMI] = useState("");
   const [data, setData] = useState({
-    age: "",
-    weight: "",
-    height: "",
+    age: {
+      value: "",
+      touched: false,
+    },
+    weight: {
+      value: "",
+      touched: false,
+    },
+    height: {
+      value: "",
+      touched: false,
+    },
   });
 
   const handleData = (e) => {
-    const newData = { ...data };
-    newData[e.target.id] = e.target.value;
-    setData(newData);
+    const { id, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [id]: {
+        ...prevData[id],
+        value,
+      },
+    }));
   };
 
   const handleCalculate = async (e) => {
     e.preventDefault();
-    if (data.age && data.weight && data.height) {
+    const { age, weight, height } = data;
+    if (age.value && weight.value && height.value) {
       const bmiData = await fetchData(
-        `${fitnessCalculatorUrl}/bmi?age=${data.age}&weight=${data.weight}&height=${data.height}`,
+        `${fitnessCalculatorUrl}/bmi?age=${age.value}&weight=${weight.value}&height=${height.value}`,
         fitnessOptions
       );
       setBMI(bmiData.data);
+    }
+  };
+
+  const getHelperText = (input) => {
+    const { value, touched } = data[input];
+    switch (input) {
+      case "age":
+        return touched && (value < 1 || value > 80)
+          ? "Age must be between 1 and 80"
+          : "";
+      case "weight":
+        return touched && (value < 40 || value > 160)
+          ? "Weight must be between 40 and 160"
+          : "";
+      case "height":
+        return touched && (value < 130 || value > 230)
+          ? "Height must be between 130 and 230"
+          : "";
+      default:
+        return "";
     }
   };
 
@@ -92,26 +132,58 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
               label="Age"
               variant="filled"
               type="number"
-              value={data.age}
+              value={data.age.value}
               onChange={(e) => handleData(e)}
+              onFocus={() => handleTouch("age")}
+              onBlur={() => handleBlur("age")}
+              inputProps={{
+                min: "1",
+                max: "80",
+              }}
+              helperText={getHelperText("age")}
             />
             <StyledTextField
               id="weight"
               label="Weight kg"
               variant="filled"
               type="number"
-              value={data.weight}
+              value={data.weight.value}
               onChange={(e) => handleData(e)}
+              onFocus={() => handleTouch("weight")}
+              onBlur={() => handleBlur("weight")}
+              inputProps={{
+                min: "40",
+                max: "160",
+              }}
+              helperText={getHelperText("weight")}
             />
             <StyledTextField
               id="height"
               label="Height cm"
               variant="filled"
               type="number"
-              value={data.height}
+              value={data.height.value}
               onChange={(e) => handleData(e)}
+              onFocus={() => handleTouch("height")}
+              onBlur={() => handleBlur("height")}
+              inputProps={{
+                min: "130",
+                max: "230",
+              }}
+              helperText={getHelperText("height")}
             />
-            <Button type="submit" variant="text">
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                backgroundColor: theme.palette.primary[100],
+                color: theme.palette.primary[500],
+                "&:hover": {
+                  color: theme.palette.primary[100],
+                  backgroundColor: theme.palette.secondary[500],
+                },
+              }}
+            >
               Calculate
             </Button>
             {bmi && (

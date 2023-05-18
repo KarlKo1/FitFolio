@@ -10,7 +10,28 @@ const Calculator = () => {
   const theme = useTheme();
   const fitnessCalculatorUrl = "https://fitness-calculator.p.rapidapi.com";
 
+  const handleTouch = (input) => {
+    setData((prevData) => ({
+      ...prevData,
+      [input]: {
+        ...prevData[input],
+        touched: true,
+      },
+    }));
+  };
+
+  const handleBlur = (input) => {
+    setData((prevData) => ({
+      ...prevData,
+      [input]: {
+        ...prevData[input],
+        touched: false,
+      },
+    }));
+  };
+
   const StyledTextField = styled(TextField)({
+    width: "150px",
     pt: "14px",
     "& label": {
       color: theme.palette.primary[100],
@@ -111,18 +132,24 @@ const Calculator = () => {
         <BMI
           fitnessCalculatorUrl={fitnessCalculatorUrl}
           StyledTextField={StyledTextField}
+          handleTouch={handleTouch}
+          handleBlur={handleBlur}
         />
       )}
       {selectedTab === 1 && (
         <IdealWeight
           fitnessCalculatorUrl={fitnessCalculatorUrl}
           StyledTextField={StyledTextField}
+          handleTouch={handleTouch}
+          handleBlur={handleBlur}
         />
       )}
       {selectedTab === 2 && (
         <DailyCalories
           fitnessCalculatorUrl={fitnessCalculatorUrl}
           StyledTextField={StyledTextField}
+          handleTouch={handleTouch}
+          handleBlur={handleBlur}
         />
       )}
     </>

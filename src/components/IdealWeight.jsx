@@ -122,8 +122,23 @@ const IdealWeight = ({ fitnessCalculatorUrl, StyledTextField }) => {
               type="number"
               value={data.height}
               onChange={(e) => handleData(e)}
+              inputProps={{
+                min: "130",
+                max: "230",
+              }}
             />
-            <Button type="submit" variant="text">
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                backgroundColor: theme.palette.primary[100],
+                color: theme.palette.primary[500],
+                "&:hover": {
+                  color: theme.palette.primary[100],
+                  backgroundColor: theme.palette.secondary[500],
+                },
+              }}
+            >
               Calculate
             </Button>
             {idealWeight && (

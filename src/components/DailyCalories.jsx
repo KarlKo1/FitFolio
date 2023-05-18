@@ -130,6 +130,10 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
               type="number"
               value={data.age}
               onChange={(e) => handleData(e)}
+              inputProps={{
+                min: "1",
+                max: "80",
+              }}
             />
             <StyledTextField
               id="weight"
@@ -138,6 +142,10 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
               type="number"
               value={data.weight}
               onChange={(e) => handleData(e)}
+              inputProps={{
+                min: "40",
+                max: "160",
+              }}
             />
             <StyledTextField
               id="height"
@@ -146,6 +154,10 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
               type="number"
               value={data.height}
               onChange={(e) => handleData(e)}
+              inputProps={{
+                min: "130",
+                max: "230",
+              }}
             />
             <RadioGroup
               aria-labelledby="demo-radio-buttons-group-label"
@@ -191,7 +203,18 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
                 value="level_6"
               />
             </RadioGroup>
-            <Button type="submit" variant="text">
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                backgroundColor: theme.palette.primary[100],
+                color: theme.palette.primary[500],
+                "&:hover": {
+                  color: theme.palette.primary[100],
+                  backgroundColor: theme.palette.secondary[500],
+                },
+              }}
+            >
               Calculate
             </Button>
             {dailyCalories && (
