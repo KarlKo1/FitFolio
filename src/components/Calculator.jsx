@@ -4,6 +4,7 @@ import BMI from "./BMI";
 import IdealWeight from "./IdealWeight";
 import DailyCalories from "./DailyCalories";
 
+//TODO: Eliminate repetitive code from BMI,DailyCalories & IdealWeight
 const Calculator = () => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [showElement, setShowElement] = useState(false);

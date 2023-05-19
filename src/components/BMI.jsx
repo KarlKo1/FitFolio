@@ -158,6 +158,7 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
                 label="Age"
                 variant="filled"
                 type="number"
+                required
                 value={data.age.value}
                 onChange={(e) => handleData(e)}
                 onFocus={() => handleTouch("age")}
@@ -173,6 +174,7 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
                 label="Weight kg"
                 variant="filled"
                 type="number"
+                required
                 value={data.weight.value}
                 onChange={(e) => handleData(e)}
                 onFocus={() => handleTouch("weight")}
@@ -188,6 +190,7 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
                 label="Height cm"
                 variant="filled"
                 type="number"
+                required
                 value={data.height.value}
                 onChange={(e) => handleData(e)}
                 onFocus={() => handleTouch("height")}

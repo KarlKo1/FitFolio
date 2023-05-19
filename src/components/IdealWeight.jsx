@@ -180,6 +180,7 @@ const IdealWeight = ({ fitnessCalculatorUrl, StyledTextField }) => {
                 label="Height cm"
                 variant="filled"
                 type="number"
+                required
                 value={data.height.value}
                 onChange={handleData}
                 onFocus={() => handleTouch("height")}
