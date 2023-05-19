@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Box, Stack, Button, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Button,
+  Typography,
+  useTheme,
+  FormControl,
+} from "@mui/material";
 import { fitnessOptions, fetchData } from "../utils/fetchData";
 
-const BMI = ({
-  fitnessCalculatorUrl,
-  StyledTextField,
-  handleTouch,
-  handleBlur,
-}) => {
+const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
   const theme = useTheme();
   const [bmi, setBMI] = useState("");
   const [data, setData] = useState({
@@ -24,6 +26,26 @@ const BMI = ({
       touched: false,
     },
   });
+
+  const handleTouch = (input) => {
+    setData((prevData) => ({
+      ...prevData,
+      [input]: {
+        ...prevData[input],
+        touched: true,
+      },
+    }));
+  };
+
+  const handleBlur = (input) => {
+    setData((prevData) => ({
+      ...prevData,
+      [input]: {
+        ...prevData[input],
+        touched: false,
+      },
+    }));
+  };
 
   const handleData = (e) => {
     const { id, value } = e.target;
@@ -69,132 +91,137 @@ const BMI = ({
   };
 
   return (
-    <Box sx={{ height: { md: "35vh", xs: "100%" } }}>
-      <form
-        className="calculator-form"
-        style={{
-          display: "flex",
-          height: "100%",
-        }}
-        onSubmit={(e) => handleCalculate(e)}
-      >
-        <Box
-          sx={{
-            backgroundColor: theme.palette.primary[100],
-            flex: "2 1 0",
-            p: { md: "2rem 0 0 5rem", xs: "2rem" },
+    <Box sx={{ height: { md: "40vh", xs: "100%" } }}>
+      <FormControl>
+        <form
+          className="calculator-form"
+          style={{
+            display: "flex",
+            height: "100%",
           }}
+          onSubmit={(e) => handleCalculate(e)}
         >
-          <Typography
-            variant="h2"
-            color={theme.palette.secondary[500]}
-            p="0.5rem 0 0.5rem 0"
-            fontSize="clamp(2rem, 1.436rem + 1.9284vw, 3.75rem)"
-          >
-            BMI
-          </Typography>
-          <Typography sx={{ width: { md: "75%", xs: "100%" } }}>
-            BMI stands for Body Mass Index, but you can call it your Body Math
-            Indicator! It's a way to figure out if your weight is healthy for
-            your height. All you need to do is plug in your weight and height
-            into a calculator and voila! Your BMI pops out. If your BMI is too
-            high or too low, it might mean you need to make some changes to your
-            diet and exercise habits. But remember, BMI is just one tool, and
-            it's always best to talk to your doctor or a nutritionist to figure
-            out what's best for you.
-          </Typography>
-        </Box>
-        <Box
-          display="flex"
-          sx={{
-            backgroundColor: theme.palette.secondary[500],
-            flex: "1 1 0",
-            p: { xs: "2rem", md: "0" },
-          }}
-          justifyContent="center
-          "
-        >
-          <Stack
-            alignItems="center"
-            justifyContent="space-evenly"
-            rowGap="0.5rem"
+          <Box
+            sx={{
+              backgroundColor: theme.palette.primary[100],
+              flex: "2 1 0",
+              p: { md: "2rem 0 0 5rem", xs: "2rem" },
+            }}
           >
             <Typography
-              fontSize="2rem"
-              sx={{
-                color: theme.palette.primary[100],
-              }}
+              variant="h2"
+              color={theme.palette.secondary[500]}
+              p="0.5rem 0 0.5rem 0"
+              fontSize="clamp(2rem, 1.436rem + 1.9284vw, 3.75rem)"
             >
-              Calculator
+              BMI
             </Typography>
-            <StyledTextField
-              id="age"
-              label="Age"
-              variant="filled"
-              type="number"
-              value={data.age.value}
-              onChange={(e) => handleData(e)}
-              onFocus={() => handleTouch("age")}
-              onBlur={() => handleBlur("age")}
-              inputProps={{
-                min: "1",
-                max: "80",
-              }}
-              helperText={getHelperText("age")}
-            />
-            <StyledTextField
-              id="weight"
-              label="Weight kg"
-              variant="filled"
-              type="number"
-              value={data.weight.value}
-              onChange={(e) => handleData(e)}
-              onFocus={() => handleTouch("weight")}
-              onBlur={() => handleBlur("weight")}
-              inputProps={{
-                min: "40",
-                max: "160",
-              }}
-              helperText={getHelperText("weight")}
-            />
-            <StyledTextField
-              id="height"
-              label="Height cm"
-              variant="filled"
-              type="number"
-              value={data.height.value}
-              onChange={(e) => handleData(e)}
-              onFocus={() => handleTouch("height")}
-              onBlur={() => handleBlur("height")}
-              inputProps={{
-                min: "130",
-                max: "230",
-              }}
-              helperText={getHelperText("height")}
-            />
-            <Button
-              type="submit"
-              variant="contained"
+            <Typography sx={{ width: { md: "75%", xs: "100%" } }}>
+              BMI stands for Body Mass Index, but you can call it your Body Math
+              Indicator! It's a way to figure out if your weight is healthy for
+              your height. All you need to do is plug in your weight and height
+              into a calculator and voila! Your BMI pops out. If your BMI is too
+              high or too low, it might mean you need to make some changes to
+              your diet and exercise habits. But remember, BMI is just one tool,
+              and it's always best to talk to your doctor or a nutritionist to
+              figure out what's best for you.
+            </Typography>
+          </Box>
+          <Box
+            display="flex"
+            sx={{
+              backgroundColor: theme.palette.secondary[500],
+              flex: "1 1 0",
+              p: { xs: "2rem", md: "0" },
+            }}
+            justifyContent="center
+          "
+          >
+            <Stack
+              alignItems="center"
+              justifyContent="space-evenly"
+              rowGap="0.5rem"
               sx={{
-                backgroundColor: theme.palette.primary[100],
-                color: theme.palette.primary[500],
-                "&:hover": {
-                  color: theme.palette.primary[100],
-                  backgroundColor: theme.palette.secondary[500],
-                },
+                p: { md: "2rem" },
               }}
             >
-              Calculate
-            </Button>
-            {bmi && (
-              <>
-                <Typography>{bmi.health}</Typography>
-                <Typography>Your BMI is {bmi.bmi.toFixed(2)}</Typography>
-              </>
-            )}
-          </Stack>
-        </Box>
-      </form>
+              <Typography
+                fontSize="2rem"
+                sx={{
+                  color: theme.palette.primary[100],
+                }}
+              >
+                Calculator
+              </Typography>
+              <StyledTextField
+                id="age"
+                label="Age"
+                variant="filled"
+                type="number"
+                value={data.age.value}
+                onChange={(e) => handleData(e)}
+                onFocus={() => handleTouch("age")}
+                onBlur={() => handleBlur("age")}
+                inputProps={{
+                  min: "1",
+                  max: "80",
+                }}
+                helperText={getHelperText("age")}
+              />
+              <StyledTextField
+                id="weight"
+                label="Weight kg"
+                variant="filled"
+                type="number"
+                value={data.weight.value}
+                onChange={(e) => handleData(e)}
+                onFocus={() => handleTouch("weight")}
+                onBlur={() => handleBlur("weight")}
+                inputProps={{
+                  min: "40",
+                  max: "160",
+                }}
+                helperText={getHelperText("weight")}
+              />
+              <StyledTextField
+                id="height"
+                label="Height cm"
+                variant="filled"
+                type="number"
+                value={data.height.value}
+                onChange={(e) => handleData(e)}
+                onFocus={() => handleTouch("height")}
+                onBlur={() => handleBlur("height")}
+                inputProps={{
+                  min: "130",
+                  max: "230",
+                }}
+                helperText={getHelperText("height")}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  backgroundColor: theme.palette.primary[100],
+                  color: theme.palette.primary[500],
+                  "&:hover": {
+                    color: theme.palette.primary[100],
+                    backgroundColor: theme.palette.secondary[500],
+                  },
+                }}
+              >
+                Calculate
+              </Button>
+              {bmi && (
+                <>
+                  <Typography>{bmi.health}</Typography>
+                  <Typography>Your BMI is {bmi.bmi.toFixed(2)}</Typography>
+                </>
+              )}
+            </Stack>
+          </Box>
+        </form>
+      </FormControl>
     </Box>
   );
 };
