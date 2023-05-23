@@ -65,7 +65,7 @@ const Calculator = () => {
               label={
                 <span
                   style={{
-                    fontSize: "clamp(0.75rem, 0.6694rem + 0.2755vw, 1rem)",
+                    fontSize: theme.palette.typography.h2,
                     color: theme.palette.secondary[500],
                   }}
                 >
@@ -77,7 +77,7 @@ const Calculator = () => {
               label={
                 <span
                   style={{
-                    fontSize: "clamp(0.75rem, 0.6694rem + 0.2755vw, 1rem)",
+                    fontSize: theme.palette.typography.h2,
                     color: theme.palette.secondary[500],
                   }}
                 >
@@ -90,7 +90,7 @@ const Calculator = () => {
               label={
                 <span
                   style={{
-                    fontSize: "clamp(0.75rem, 0.6694rem + 0.2755vw, 1rem)",
+                    fontSize: theme.palette.typography.h5,
                     color: theme.palette.secondary[500],
                   }}
                 >

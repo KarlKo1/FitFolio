@@ -75,9 +75,9 @@ const Home = () => {
             </IconButton>
             <Stack
               direction="row"
-              fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
               sx={{
                 gap: { lg: "60px", xs: "20px" },
+                fontSize: theme.palette.typography.logo,
                 display: { xs: "none", md: "flex" },
               }}
             >
@@ -149,11 +149,13 @@ const Home = () => {
           >
             <Stack
               direction="row"
-              fontSize="clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)"
               alignItems="center"
               justifyContent="space-around"
               pt="2rem"
               width="100%"
+              sx={{
+                fontSize: theme.palette.typography.logo,
+              }}
             >
               <a
                 href="#calculator"

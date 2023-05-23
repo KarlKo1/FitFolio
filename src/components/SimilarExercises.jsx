@@ -1,51 +1,56 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useTheme } from "@mui/material";
 
 import HorizontalScrollbar from "./HorizontalScrollBar";
 import Loader from "./Loader";
 
 const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
+  const theme = useTheme();
   return (
     <Box
       sx={{
         mt: { lg: "100px", xs: "0" },
         position: "relative",
         width: "100%",
-        p: "20px",
       }}
     >
-      <Typography
-        variant="h3"
-        mb={5}
-        sx={{
-          fontSize: "clamp(2rem, 1.0331rem + 3.3058vw, 5rem)",
-        }}
+      <Box
+        width="80%"
+        margin="0 auto"
+        textAlign="center"
+        sx={{ p: { lg: "5rem", xs: "0" } }}
       >
-        Exercises that target the same muscle group
-      </Typography>
-      <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
-        {targetMuscleExercises.length ? (
-          <HorizontalScrollbar data={targetMuscleExercises} />
-        ) : (
-          <Loader />
-        )}
-      </Stack>
-      <Typography
-        variant="h3"
-        mb={5}
-        sx={{
-          fontSize: "clamp(2rem, 1.0331rem + 3.3058vw, 5rem)",
-        }}
-      >
-        Exercises that use the same equipment
-      </Typography>
-      <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
-        {equipmentExercises.length ? (
-          <HorizontalScrollbar data={equipmentExercises} />
-        ) : (
-          <Loader />
-        )}
-      </Stack>
+        <Typography
+          sx={{
+            fontSize: theme.palette.typography.h5,
+          }}
+          mt={5}
+        >
+          Exercises that target the same muscle group
+        </Typography>
+        <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
+          {targetMuscleExercises.length ? (
+            <HorizontalScrollbar data={targetMuscleExercises} />
+          ) : (
+            <Loader />
+          )}
+        </Stack>
+        <Typography
+          mt={5}
+          sx={{
+            fontSize: theme.palette.typography.h5,
+          }}
+        >
+          Exercises that use the same equipment
+        </Typography>
+        <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
+          {equipmentExercises.length ? (
+            <HorizontalScrollbar data={equipmentExercises} />
+          ) : (
+            <Loader />
+          )}
+        </Stack>
+      </Box>
     </Box>
   );
 };

@@ -10,7 +10,9 @@ const Footer = () => {
           FITFOLIO
         </Typography>
         <Typography
-          variant="h5"
+          sx={{
+            fontSize: theme.palette.typography.h3,
+          }}
           pb="40px"
           mt="20px"
           color={theme.palette.primary[100]}

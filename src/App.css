@@ -119,6 +119,7 @@ a {
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
   width: 350px;
+  height: 400px;
 }
 
 .exercise-card img {
@@ -134,7 +135,7 @@ a {
 
 .exercise-card:hover,
 .bodyPart-card:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05, 1.05);
   border-radius: 0;
   border-color: transparent !important;
 }
@@ -181,12 +182,18 @@ a {
   gap: 1rem;
 }
 
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-1x3ryb6-MuiInputBase-root-MuiOutlinedInput-root,
+.css-1x3ryb6-MuiInputBase-root-MuiOutlinedInput-root,
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-xx7yzh-MuiInputBase-root-MuiOutlinedInput-root {
+  border-radius: 16px;
+}
+
 .detail-image {
   border-radius: 20px;
 }
 
 .detail-icon {
-  max-width: 100%;
+  width: 45px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -198,12 +205,6 @@ a {
   .left-arrow,
   .right-arrow {
     position: static !important;
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .exercise-card img {
-    height: 130px;
   }
 }
 
@@ -226,8 +227,16 @@ a {
 }
 
 @media screen and (max-width: 468px) {
+  .exercise-card img {
+    height: 130px;
+  }
   .hero-banner-img {
     display: none;
+  }
+
+  .exercise-card {
+    width: 200px;
+    height: 300px;
   }
 
   .bg-circle-3 {

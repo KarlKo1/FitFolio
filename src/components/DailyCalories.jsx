@@ -148,10 +148,12 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
             }}
           >
             <Typography
-              variant="h2"
+              sx={{
+                fontSize: theme.palette.typography.h2,
+                s,
+              }}
               color={theme.palette.secondary[500]}
               p="0.5rem 0 0.5rem 0"
-              fontSize="clamp(2rem, 1.436rem + 1.9284vw, 3.75rem)"
             >
               Daily Calory Requirement
             </Typography>

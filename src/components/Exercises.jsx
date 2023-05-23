@@ -18,6 +18,7 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
 
   const paginate = (e, value) => {
     setCurrentPage(value);
+    document.getElementById("results")?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -42,18 +43,21 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
   return (
     <Box
       sx={{
-        mt: { lg: "110px" },
+        mt: { sm: "110px" },
         p: { md: "0 5rem 0 5rem", xs: "0" },
         display: "flex",
         flexDirection: "column",
       }}
+      id="results"
       mt="50px"
     >
       {exercises.length > 0 && (
         <Typography
-          variant="h4"
           ml="30px"
-          sx={{ color: theme.palette.secondary[500] }}
+          sx={{
+            color: theme.palette.secondary[500],
+            fontSize: theme.palette.typography.h4,
+          }}
         >
           Showing Results {exercises.length}
         </Typography>

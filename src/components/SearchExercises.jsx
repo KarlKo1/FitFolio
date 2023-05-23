@@ -50,7 +50,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       alignItems="center"
       mt="90px"
       justifyContent="center"
-      sx={{ p: { md: "0 5rem 0 5rem", xs: "0" } }}
+      sx={{ p: { lg: "0 5rem 0 5rem", xs: "0" } }}
       id="exercises"
     >
       <Typography
@@ -64,7 +64,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       >
         Find Awesome Exercises
       </Typography>
-      <Box position="relative" mb="72px">
+      <Box position="relative" mb="72px" className="xd">
         <TextField
           height="76px"
           value={search}
@@ -77,18 +77,25 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             },
             width: { lg: "800px", xs: "300px" },
             backgroundColor: theme.palette.secondary[900],
+            borderRadius: "16px",
           }}
         />
         <Button
           sx={{
             bgcolor: theme.palette.secondary[600],
-            color: theme.palette.secondary[900],
+            color: theme.palette.primary[100],
             textTransform: "none",
             width: { lg: "175px", xs: "80px" },
             fontSize: { lg: "20px", xs: "14px" },
+            fontWeight: "700",
             height: "56px",
             position: "absolute",
             right: 0,
+            borderRadius: "16px",
+            "&:hover": {
+              color: theme.palette.primary[100],
+              backgroundColor: theme.palette.secondary[500],
+            },
           }}
           onClick={handleSearch}
         >

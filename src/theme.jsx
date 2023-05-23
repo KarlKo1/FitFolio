@@ -115,23 +115,27 @@ export const themeSettings = (mode) => {
         },
         h2: {
           fontFamily: ["Roboto", "sans-serif"].join(","),
-          fontSize: 32,
+          fontSize: "clamp(2rem, 1.436rem + 1.9284vw, 3.75rem)",
         },
         h3: {
           fontFamily: ["Roboto", "sans-serif"].join(","),
-          fontSize: 24,
+          fontSize: "clamp(1rem, 0.8388rem + 0.551vw, 1.5rem)",
         },
         h4: {
           fontFamily: ["Roboto", "sans-serif"].join(","),
-          fontSize: 20,
+          fontSize: "clamp(1rem, 0.6777rem + 1.1019vw, 2rem)",
         },
         h5: {
           fontFamily: ["Roboto", "sans-serif"].join(","),
-          fontSize: 16,
+          fontSize: "clamp(2rem, 1.6777rem + 1.1019vw, 3rem)",
         },
         h6: {
           fontFamily: ["Roboto", "sans-serif"].join(","),
-          fontSize: 14,
+          fontSize: "clamp(0.75rem, 0.6694rem + 0.2755vw, 1rem)",
+        },
+        logo: {
+          fontFamily: ["Roboto", "sans-serif"].join(","),
+          fontSize: "clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem)",
         },
       },
     },
