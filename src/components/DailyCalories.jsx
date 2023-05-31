@@ -143,17 +143,16 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
           <Box
             sx={{
               backgroundColor: theme.palette.primary[100],
-              flex: "2 1 0",
-              p: { md: "2rem 0 0 5rem", xs: "2rem" },
+              width: { md: "70%", xs: "100%" },
+              p: { lg: "0 0 0 15rem", xs: "2rem" },
             }}
           >
             <Typography
               sx={{
                 fontSize: theme.palette.typography.h2,
-                s,
               }}
               color={theme.palette.secondary[500]}
-              p="0.5rem 0 0.5rem 0"
+              p="1.5rem 0 0.5rem 0"
             >
               Daily Calory Requirement
             </Typography>
@@ -171,7 +170,7 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
             display="flex"
             sx={{
               backgroundColor: theme.palette.secondary[500],
-              flex: "1 1 0",
+              width: { md: "30%", xs: "100%" },
               p: { xs: "2rem", md: "0" },
             }}
             justifyContent="center"
@@ -315,8 +314,8 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
                   backgroundColor: theme.palette.primary[100],
                   color: theme.palette.primary[500],
                   "&:hover": {
-                    color: theme.palette.primary[100],
-                    backgroundColor: theme.palette.secondary[500],
+                    backgroundColor: theme.palette.primary[100],
+                    color: theme.palette.primary[500],
                   },
                 }}
               >

@@ -31,7 +31,6 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
           sx={{
             flexDirection: { md: "row", xs: "column" },
             gap: "1.5rem",
-            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           }}
         >
           {exerciseVideos?.slice(0, 3).map((item, index) => (

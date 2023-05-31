@@ -68,12 +68,18 @@ const ExerciseDetail = () => {
         sx={{
           justifyContent: { md: "space-around", xs: "flex-start" },
           gap: { md: "none", xs: "5rem" },
-          width: "80%",
+          width: { md: "70%", xs: "100%" },
           margin: "0 auto",
         }}
       >
         <Link href="/" underline="none">
-          <Typography id="logo" sx={{ color: theme.palette.secondary[500] }}>
+          <Typography
+            id="logo"
+            sx={{
+              color: theme.palette.secondary[500],
+              fontSize: theme.palette.typography.logo,
+            }}
+          >
             FITFOLIO
           </Typography>
         </Link>

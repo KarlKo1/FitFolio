@@ -23,27 +23,32 @@ const HeroBanner = () => {
           fontSize: { lg: "44px", xs: "24px" },
           color: theme.palette.primary[100],
         }}
-        mb="23px"
-        mt="30px"
+        mb={2}
       >
-        Your Comprehensive <br /> Fitness Handbook
+        YOUR COMPREHENSIVE <br /> FITNESS HANDBOOK
       </Typography>
       <Typography
-        fontSize="22px"
         lineHeight="35px"
-        mb={2}
-        sx={{ color: theme.palette.primary[100] }}
+        fontWeight="300"
+        mb={4}
+        sx={{
+          color: theme.palette.primary[100],
+          fontSize: theme.palette.typography.h3,
+        }}
       >
-        Check out the most effective exerices
+        Check out the calculator for determining vital health metrics <br />{" "}
+        like body mass index, ideal weight, and daily caloric intake, <br />
+        along with a selection of highly effective exercises.
       </Typography>
       <Button
         variant="contained"
         sx={{
           backgroundColor: theme.palette.primary[100],
           color: theme.palette.primary[500],
+          fontWeight: "600",
           "&:hover": {
-            color: theme.palette.primary[100],
-            backgroundColor: theme.palette.secondary[500],
+            backgroundColor: theme.palette.primary[100],
+            color: theme.palette.primary[500],
           },
         }}
         href="#exercises"

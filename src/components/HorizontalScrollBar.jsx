@@ -38,30 +38,36 @@ const RightArrow = () => {
   );
 };
 
-const HorizontalScrollbar = ({ data, setBodyPart, bodyPart, isBodyParts }) => (
-  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-    {data.map((item) => (
-      <Box
-        key={item.id || item}
-        id={item.id || item}
-        title={item.id || item}
-        sx={{
-          m: { md: "0 40px", xs: "0" },
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "auto",
-        }}
-      >
-        {isBodyParts ? (
-          <BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
-        ) : (
-          <ExerciseCard exercise={item} />
-        )}
-      </Box>
-    ))}
-  </ScrollMenu>
-);
+const HorizontalScrollbar = ({ data, setBodyPart, bodyPart, isBodyParts }) => {
+  const reversedData = [...data].reverse();
+  return (
+    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} wheel={false}>
+      {reversedData.map((item) => (
+        <Box
+          key={item.id || item}
+          id={item.id || item}
+          title={item.id || item}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          {isBodyParts ? (
+            <BodyPart
+              item={item}
+              bodyPart={bodyPart}
+              setBodyPart={setBodyPart}
+            />
+          ) : (
+            <ExerciseCard exercise={item} />
+          )}
+        </Box>
+      ))}
+    </ScrollMenu>
+  );
+};
 
 export default HorizontalScrollbar;

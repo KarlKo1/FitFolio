@@ -4,17 +4,18 @@ import { Box, Stack, Typography, useTheme } from "@mui/material";
 const Footer = () => {
   const theme = useTheme();
   return (
-    <Box mt="80px" bgcolor={theme.palette.secondary[700]}>
-      <Stack alignItems="center">
+    <Box mt="80px" bgcolor={theme.palette.secondary[500]}>
+      <Stack alignItems="center" pt="2rem">
         <Typography id="logo" sx={{ color: theme.palette.primary[100] }}>
           FITFOLIO
         </Typography>
         <Typography
           sx={{
-            fontSize: theme.palette.typography.h3,
+            fontSize: theme.palette.typography.h6,
+            textAlign: "center",
           }}
-          pb="40px"
-          mt="20px"
+          pb="1rem"
+          mt="1rem"
           color={theme.palette.primary[100]}
         >
           <a href="https://www.freepik.com/free-vector/doodle-health-fitness-icons_1265560.htm#query=gym%20icon&position=0&from_view=search&track=ais">
@@ -22,7 +23,7 @@ const Footer = () => {
           </a>{" "}
           on Freepik
           <br />
-          @Karl Ko
+          @2023 KARL KO
         </Typography>
       </Stack>
     </Box>

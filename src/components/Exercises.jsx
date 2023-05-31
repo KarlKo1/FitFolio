@@ -27,7 +27,7 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
 
       if (bodyPart === "all") {
         exercisesData = await fetchData(
-          "https://exercisedb.p.rapidapi.com/exercises/",
+          "https://exercisedb.p.rapidapi.com/exercises",
           exerciseOptions
         );
       } else {
@@ -35,9 +35,11 @@ const Exercises = ({ bodyPart, exercises, setExercises }) => {
           `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
           exerciseOptions
         );
-        setExercises(exercisesData);
       }
+
+      setExercises(exercisesData);
     };
+
     fetchExercisesData();
   }, [bodyPart]);
   return (

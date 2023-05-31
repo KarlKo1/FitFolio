@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 @font-face {
   font-family: "edosz";
@@ -22,6 +22,7 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
+  line-height: 2 !important;
 }
 
 ::-webkit-scrollbar {
@@ -35,7 +36,6 @@ a {
 
 #logo {
   font-family: "Neuropolitical";
-  font-size: clamp(1rem, 0.7679rem + 0.7934vw, 1.72rem);
 }
 
 #loading-screen-logo {
@@ -78,15 +78,11 @@ a {
   right: 140px;
 }
 
-.right-arrow:hover,
-.left-arrow:hover {
-  transform: scale(1.3, 1.3);
-}
-
 .hero-banner-img {
   width: 150%;
   height: auto;
   pointer-events: none;
+  margin-left: 1rem;
 }
 
 .hero-banner-text {
@@ -109,7 +105,7 @@ a {
 
 .exercise-card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 4px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -179,13 +175,7 @@ a {
 }
 
 .react-horizontal-scrolling-menu--scroll-container {
-  gap: 1rem;
-}
-
-.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-1x3ryb6-MuiInputBase-root-MuiOutlinedInput-root,
-.css-1x3ryb6-MuiInputBase-root-MuiOutlinedInput-root,
-.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.css-xx7yzh-MuiInputBase-root-MuiOutlinedInput-root {
-  border-radius: 16px;
+  gap: 1.5rem;
 }
 
 .detail-image {
@@ -196,15 +186,28 @@ a {
   width: 45px;
 }
 
+.css-xzkq1u-MuiFormHelperText-root,
+.css-1wc848c-MuiFormHelperText-root {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.left-arrow,
+.right-arrow {
+  position: static !important;
+}
+
+.right-arrow {
+  margin-right: 2rem !important;
+}
+
+.left-arrow {
+  margin-left: 2rem !important;
+}
+
 @media screen and (max-width: 1200px) {
   .detail-image {
     width: 300px;
     border-radius: 20px;
-  }
-
-  .left-arrow,
-  .right-arrow {
-    position: static !important;
   }
 }
 
@@ -224,14 +227,24 @@ a {
   .bg-circle {
     display: none;
   }
+  .hero-banner-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .MuiTypography-root.MuiTypography-body1.css-nua41m-MuiTypography-root br,
+  .MuiTypography-root.MuiTypography-body1.css-1zkkfq-MuiTypography-root br {
+    display: none;
+  }
+  .calculator-form {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 468px) {
   .exercise-card img {
     height: 130px;
-  }
-  .hero-banner-img {
-    display: none;
   }
 
   .exercise-card {
@@ -260,10 +273,6 @@ a {
   .hero-banner-text span {
     position: absolute;
     right: 15%;
-  }
-
-  .calculator-form {
-    flex-direction: column;
   }
 }
 

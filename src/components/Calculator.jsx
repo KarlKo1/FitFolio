@@ -43,10 +43,9 @@ const Calculator = () => {
         <Box
           sx={{
             backgroundColor: theme.palette.primary[100],
-            flex: { md: "2 1 0", xs: "2 1 0" },
-            pl: { md: "5rem", xs: "none" },
             display: "flex",
-            justifyContent: "center",
+            width: { md: "70%", xs: "100%" },
+            pl: { lg: "5rem", xl: "15rem" },
           }}
         >
           <Tabs
@@ -103,9 +102,8 @@ const Calculator = () => {
         <Box
           sx={{
             backgroundColor: theme.palette.secondary[500],
-            flex: "1 1 0",
-            display: { xs: "none", sm: "flex" },
-            pl: { xs: "2rem", md: "0" },
+            display: { xs: "none", md: "flex" },
+            width: { md: "30%", xs: "100%" },
           }}
         ></Box>
       </Box>

@@ -67,7 +67,7 @@ const ExerciseCard = ({ exercise }) => {
             ml: { md: "20px", xs: "5px" },
             mr: { md: "20px", xs: "5px" },
             color: theme.palette.primary[100],
-            background: theme.palette.secondary[600],
+            background: theme.palette.secondary[500],
             borderRadius: "20px",
             textTransform: "capitalize",
             flexWrap: "wrap",

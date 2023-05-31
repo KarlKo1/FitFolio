@@ -48,9 +48,17 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   return (
     <Stack
       alignItems="center"
-      mt="90px"
       justifyContent="center"
-      sx={{ p: { lg: "0 5rem 0 5rem", xs: "0" } }}
+      sx={{
+        p: {
+          lg: "0 5rem 0 5rem",
+          xs: "2rem",
+        },
+        mt: {
+          md: "90px",
+          xs: "0",
+        },
+      }}
       id="exercises"
     >
       <Typography
@@ -64,7 +72,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       >
         Find Awesome Exercises
       </Typography>
-      <Box position="relative" mb="72px" className="xd">
+      <Box position="relative" mb="72px">
         <TextField
           height="76px"
           value={search}
@@ -77,13 +85,13 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             },
             width: { lg: "800px", xs: "300px" },
             backgroundColor: theme.palette.secondary[900],
-            borderRadius: "16px",
+            borderRadius: "4px",
           }}
         />
         <Button
           sx={{
-            bgcolor: theme.palette.secondary[600],
-            color: theme.palette.primary[100],
+            bgcolor: theme.palette.primary[500],
+            color: theme.palette.secondary[900],
             textTransform: "none",
             width: { lg: "175px", xs: "80px" },
             fontSize: { lg: "20px", xs: "14px" },
@@ -91,7 +99,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             height: "56px",
             position: "absolute",
             right: 0,
-            borderRadius: "16px",
+            borderRadius: "4px",
+
             "&:hover": {
               color: theme.palette.primary[100],
               backgroundColor: theme.palette.secondary[500],
@@ -105,7 +114,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       <Box
         sx={{
           position: "relative",
-          width: "100%",
+          width: "80%",
         }}
       >
         <HorizontalScrollBar

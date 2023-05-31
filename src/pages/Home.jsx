@@ -27,29 +27,42 @@ const Home = () => {
     <Box>
       <Box
         display="flex"
-        height="95vh"
-        sx={{ flexDirection: { md: "row", xs: "column" } }}
+        sx={{
+          height: { xs: "100%", sm: "95vh" },
+          flexDirection: { md: "row", xs: "column" },
+        }}
       >
         <Box
           sx={{
             backgroundColor: theme.palette.secondary[500],
-            flex: "2 1 0",
+            width: { md: "70%", xs: "100%" },
+            p: {
+              xs: "2rem 2rem 10rem 2rem",
+              sm: "0rem 2rem 10rem 2rem",
+              lg: "0rem 0rem 0rem 5rem",
+              xl: "0rem 0rem 0rem 15rem",
+            },
           }}
           position="relative"
-          pl="5rem"
         >
           <Box
             className="left-navbar"
             display="flex"
             alignItems="center"
-            pt="2.5rem"
             sx={{
               justifyContent: { md: "space-around", xs: "flex-start" },
               gap: { md: "none", xs: "5rem" },
+              pt: { md: "2.5rem", xs: "0" },
             }}
           >
             <Link href="/" underline="none">
-              <Typography id="logo" sx={{ color: theme.palette.primary[100] }}>
+              <Typography
+                id="logo"
+                sx={{
+                  color: theme.palette.primary[100],
+                  fontSize: theme.palette.typography.logo,
+                }}
+              >
                 FITFOLIO
               </Typography>
             </Link>
@@ -82,6 +95,7 @@ const Home = () => {
               }}
             >
               <Link
+                fontSize={theme.palette.typography.nav}
                 href="/"
                 style={{
                   textDecoration: "none",
@@ -90,7 +104,8 @@ const Home = () => {
               >
                 Home
               </Link>
-              <a
+              <Link
+                fontSize={theme.palette.typography.nav}
                 href="#exercises"
                 style={{
                   textDecoration: "none",
@@ -98,7 +113,7 @@ const Home = () => {
                 }}
               >
                 Exercises
-              </a>
+              </Link>
             </Stack>
           </Box>
 
@@ -117,7 +132,10 @@ const Home = () => {
             <img src={HeroBannerImg} alt="banner" className="hero-banner-img" />
             <p
               className="hero-banner-text"
-              style={{ color: theme.palette.primary[100] }}
+              style={{
+                color: theme.palette.primary[100],
+                fontSize: theme.palette.typography.h2,
+              }}
             >
               Work <br />
               <span>It Up</span>
@@ -139,7 +157,11 @@ const Home = () => {
           ></span>
         </Box>
         <Box
-          sx={{ backgroundColor: theme.palette.primary[100], flex: "1 1 0" }}
+          sx={{
+            backgroundColor: theme.palette.primary[100],
+            width: { md: "30%", xs: "100%" },
+            height: { xs: "25vh", sm: "100%" },
+          }}
         >
           <Box
             className="right-navbar"

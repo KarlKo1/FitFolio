@@ -41,14 +41,15 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
   };
   return (
     <Stack
-      type="button"
       alignItems="center"
       justifyContent="center"
       className="bodyPart-card"
       sx={{
         borderTop:
-          bodyPart === item ? `4px solid ${theme.palette.secondary[500]}` : "",
-        borderRadius: "16px",
+          bodyPart === item
+            ? `4px solid ${theme.palette.secondary[500]}`
+            : "none",
+        borderRadius: "4px",
         backgroundColor: theme.palette.grey[50],
         width: { lg: "280px", xs: "150px" },
         height: { lg: "280px", xs: "150px" },
@@ -61,14 +62,14 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
     >
       <img
         src={getGategory(item)}
-        alt="dumbell"
+        alt="equipment"
         style={{ width: "40px", height: "40px" }}
       />
 
       <Typography
         fontSize="24px"
         fontWeight="bold"
-        style={{ color: theme.palette.grey[700] }}
+        color="#141414"
         textTransform="capitalize"
       >
         {item}
@@ -76,5 +77,4 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
     </Stack>
   );
 };
-
 export default BodyPart;
