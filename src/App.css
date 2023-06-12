@@ -67,15 +67,9 @@ a {
   align-items: center;
   font-size: 25px;
   border-radius: 4px;
-  position: absolute;
-  bottom: -20px;
-  right: 80px;
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
-}
-
-.right-arrow {
-  right: 140px;
+  position: static !important;
 }
 
 .hero-banner-img {
@@ -114,7 +108,7 @@ a {
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
   height: 400px;
-  margin: 20px 20px 0 20px;
+  margin: 20px 40px 0 0;
 }
 
 .exercise-card img {
@@ -186,17 +180,8 @@ a {
   color: rgba(255, 255, 255, 0.7) !important;
 }
 
-.left-arrow,
-.right-arrow {
-  position: static !important;
-}
-
-.right-arrow {
-  margin-right: 2rem !important;
-}
-
-.left-arrow {
-  margin-left: 2rem !important;
+.react-horizontal-scrolling-menu--scroll-container {
+  margin: 0 40px 0 40px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -244,6 +229,7 @@ a {
 
   .exercise-card {
     height: 300px;
+    width: 225px;
   }
 
   .bg-circle-3 {
@@ -267,6 +253,9 @@ a {
   .hero-banner-text span {
     position: absolute;
     right: 15%;
+  }
+  .react-horizontal-scrolling-menu--scroll-container {
+    margin: 0;
   }
 }
 

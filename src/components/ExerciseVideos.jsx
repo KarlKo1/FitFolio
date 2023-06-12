@@ -7,7 +7,10 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
   if (!exerciseVideos.length) return "Loading...";
   return (
     <Box p="20px" backgroundColor={theme.palette.secondary[500]}>
-      <Box width="80%" margin="0 auto" sx={{ p: { md: "5rem", xs: "0" } }}>
+      <Box
+        margin="0 auto"
+        sx={{ p: { md: "5rem", xs: "0" }, width: { xs: "90%", md: "80%" } }}
+      >
         <Typography
           sx={{
             fontSize: theme.palette.typography.h5,

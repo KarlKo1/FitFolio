@@ -12,9 +12,9 @@ const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
   const theme = useTheme();
   return (
-    <Typography onClick={() => scrollPrev()} className="right-arrow">
+    <Typography onClick={() => scrollPrev()} className="left-arrow">
       <ArrowBackIcon
-        alt="right-arrow"
+        alt="left-arrow"
         fontSize="large"
         style={{ color: theme.palette.secondary[500] }}
       />
@@ -27,7 +27,7 @@ const RightArrow = () => {
   const theme = useTheme();
 
   return (
-    <Typography onClick={() => scrollNext()} className="left-arrow">
+    <Typography onClick={() => scrollNext()} className="right-arrow">
       <ArrowForwardIcon
         alt="right-arrow"
         fontSize="large"
