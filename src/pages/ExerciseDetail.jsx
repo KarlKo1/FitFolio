@@ -68,6 +68,7 @@ const ExerciseDetail = () => {
         sx={{
           justifyContent: { md: "space-around", xs: "flex-start" },
           gap: { md: "none", xs: "5rem" },
+          padding: { xs: "2rem 2rem 0 2rem;" },
           width: { md: "70%", xs: "100%" },
           margin: "0 auto",
         }}

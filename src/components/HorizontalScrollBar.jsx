@@ -5,7 +5,6 @@ import "react-horizontal-scrolling-menu/dist/styles.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ExerciseCard from "./ExerciseCard";
-
 //Components and pages
 import BodyPart from "./BodyPart";
 

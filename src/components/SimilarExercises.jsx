@@ -14,19 +14,31 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
         width: "100%",
       }}
     >
+      <Typography
+        sx={{
+          fontSize: theme.palette.typography.h5,
+        }}
+        mt={5}
+        textAlign="center"
+      >
+        Find more exercises for same muscle group or equipment
+      </Typography>
       <Box
         width="80%"
         margin="0 auto"
-        textAlign="center"
+        textAlign="left"
         sx={{ p: { lg: "5rem", xs: "0" } }}
       >
         <Typography
-          sx={{
-            fontSize: theme.palette.typography.h5,
-          }}
           mt={5}
+          sx={{
+            fontSize: theme.palette.typography.h4,
+            color: theme.palette.secondary[500],
+            fontWeight: "500",
+            textAlign: "center",
+          }}
         >
-          Exercises that target the same muscle group
+          Muscle group
         </Typography>
         <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
           {targetMuscleExercises.length ? (
@@ -38,10 +50,13 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
         <Typography
           mt={5}
           sx={{
-            fontSize: theme.palette.typography.h5,
+            fontSize: theme.palette.typography.h4,
+            color: theme.palette.secondary[500],
+            fontWeight: "500",
+            textAlign: "center",
           }}
         >
-          Exercises that use the same equipment
+          Equipment
         </Typography>
         <Stack direction="column" sx={{ position: "relative", width: "100%" }}>
           {equipmentExercises.length ? (

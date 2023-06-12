@@ -105,7 +105,12 @@ const BMI = ({ fitnessCalculatorUrl, StyledTextField }) => {
             sx={{
               backgroundColor: theme.palette.primary[100],
               width: { md: "70%", xs: "100%" },
-              p: { lg: "0 0 0 15rem", xs: "2rem" },
+              p: {
+                xs: "2rem",
+                sm: "0rem 2rem 10rem 2rem",
+                lg: "0rem 0rem 0rem 5rem",
+                xl: "0rem 0rem 0rem 15rem",
+              },
             }}
           >
             <Typography

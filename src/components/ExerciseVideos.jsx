@@ -12,6 +12,7 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
           sx={{
             fontSize: theme.palette.typography.h5,
           }}
+          textAlign="center"
           mb="33px"
           color={theme.palette.primary[100]}
         >
@@ -30,7 +31,7 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
           alignItems="center"
           sx={{
             flexDirection: { md: "row", xs: "column" },
-            gap: "1.5rem",
+            gap: "3rem",
           }}
         >
           {exerciseVideos?.slice(0, 3).map((item, index) => (
@@ -39,10 +40,11 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
               display="flex"
               flexDirection="column"
               alignItems="center"
-              borderRadius="20px"
+              borderRadius="4px"
+              boxShadow="rgba(0, 0, 0, 1) 0px 3px 8px"
               key={index}
               sx={{
-                width: { md: "300px", xs: "250px" },
+                width: { md: "350px", xs: "250px" },
                 height: { md: "400px", xs: "300px" },
               }}
             >
@@ -58,7 +60,7 @@ const ExerciseVideos = ({ name, exerciseVideos }) => {
                   alt={item.video.title}
                   width="100%"
                   style={{
-                    borderRadius: "20px 20px 0 0",
+                    borderRadius: "4px 4px 0 0",
                   }}
                 />
                 <PlayArrowIcon

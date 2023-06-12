@@ -30,7 +30,7 @@ const ExerciseCard = ({ exercise }) => {
         textAlign="center"
         sx={{
           mt: { lg: "11px", xs: "5px" },
-          fontSize: theme.palette.typography.h3,
+          fontSize: theme.palette.typography.h6,
         }}
       >
         {exercise.name}
@@ -50,7 +50,7 @@ const ExerciseCard = ({ exercise }) => {
             mr: { md: "20px", xs: "5px" },
             color: theme.palette.primary[100],
             background: theme.palette.secondary[500],
-            borderRadius: "20px",
+            borderRadius: "4px",
             textTransform: "capitalize",
             flexWrap: "wrap",
             width: "fit-content",
@@ -68,7 +68,7 @@ const ExerciseCard = ({ exercise }) => {
             mr: { md: "20px", xs: "5px" },
             color: theme.palette.primary[100],
             background: theme.palette.secondary[500],
-            borderRadius: "20px",
+            borderRadius: "4px",
             textTransform: "capitalize",
             flexWrap: "wrap",
             fontSize: theme.palette.typography.h6,

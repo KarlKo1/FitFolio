@@ -186,7 +186,7 @@ const Home = () => {
                   color: theme.palette.secondary[500],
                   border: "3px solid",
                   borderColor: theme.palette.secondary[500],
-                  borderRadius: "5px",
+                  borderRadius: "4px",
                   padding: "0.25rem 1rem 0.25rem 1rem",
                 }}
               >

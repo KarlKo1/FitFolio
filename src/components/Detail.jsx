@@ -25,28 +25,34 @@ const Detail = ({ exerciseDetail }) => {
   return (
     <Stack>
       <Box
-        width="80%"
         margin="0 auto"
-        pt="4rem"
-        sx={{ height: { md: "75vh" } }}
+        sx={{
+          width: { md: "70%", xs: "80%" },
+          height: { md: "75vh" },
+          pt: "2rem",
+        }}
       >
-        <Stack sx={{ gap: "1.5rem" }}>
-          <Box sx={{ display: { md: "flex" } }}>
+        <Stack>
+          <Box sx={{ display: { md: "flex" }, alignItems: "center" }}>
             <Box>
               <Typography
                 textTransform="capitalize"
                 sx={{
                   fontSize: theme.palette.typography.h2,
                   color: theme.palette.secondary[500],
+                  fontWeight: "500",
                 }}
               >
                 {name}
               </Typography>
               <Typography
+                lineHeight="35px"
+                fontWeight="300"
                 sx={{
-                  fontSize: theme.palette.typography.h6,
+                  fontSize: theme.palette.typography.h3,
                   width: { md: "75%" },
                   mt: { md: "2rem" },
+                  mb: { xs: "2rem" },
                 }}
               >
                 Engaging in regular exercise is beneficial for maintaining
@@ -80,9 +86,10 @@ const Detail = ({ exerciseDetail }) => {
           <Box
             display="flex"
             sx={{
-              flexDirection: { xs: "column", md: "row" },
-              justifyContent: { md: "space-evenly" },
-              mt: { md: "5rem" },
+              flexDirection: "row",
+              justifyContent: { md: "space-evenly", xs: "center" },
+              flexWrap: { xs: "wrap" },
+              mt: { md: "5rem", xs: "2rem" },
               mb: "2rem",
             }}
             gap="1.5rem"
