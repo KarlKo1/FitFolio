@@ -154,7 +154,7 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
               color={theme.palette.secondary[500]}
               p="1.5rem 0 0.5rem 0"
             >
-              Daily Calory Requirement
+              Daily Calorie Requirement
             </Typography>
             <Typography sx={{ width: { md: "75%", xs: "100%" } }}>
               Calories are your body's fuel. Your daily calorie requirement
@@ -324,7 +324,7 @@ const DailyColories = ({ fitnessCalculatorUrl, StyledTextField }) => {
               {dailyCalories && (
                 <>
                   <Typography>
-                    Your daily calory requirement to maintain weight is{" "}
+                    Your daily calorie requirement to maintain weight is{" "}
                     {dailyCalories.goals["maintain weight"].toFixed()} calories.
                   </Typography>
                 </>

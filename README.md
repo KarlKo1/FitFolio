@@ -1,6 +1,6 @@
 # FitFolio
 
-A fitness application where users can find exercises. Application also includes calculators about body mass index (BMI), daily calory requirement and ideal weight calculations. 
+A fitness application where users can find exercises. Application also includes calculators about body mass index (BMI), daily calorie requirement and ideal weight calculations.
 
 ## Features
 
@@ -8,7 +8,7 @@ A fitness application where users can find exercises. Application also includes 
 - View exercise gifs
 - Calculate BMI (body mass index)
 - Calculate Ideal Weight based on gender and height
-- Calculate Daily Calory Requirement based on gender, age, weight, height and activity
+- Calculate Daily Calorie Requirement based on gender, age, weight, height and activity
 - Responsive design for mobile and desktop
 
 ## Technologies Used
